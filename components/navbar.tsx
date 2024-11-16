@@ -11,8 +11,12 @@ import { Settings } from "@/setting";
 
 export const NAVLINKS = [
   {
-    title: "Documentation",
+    title: "Docs",
     href: `/docs${page_routes[0].href}`,
+  },
+  {
+    title: "Components",
+    href: "/getting-started/components",
   },
   {
     title: "Blog",
