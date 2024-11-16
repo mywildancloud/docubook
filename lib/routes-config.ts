@@ -6,7 +6,7 @@ export type EachRoute = {
   noLink?: true; // noLink will create a route segment (section) but cannot be navigated
   items?: EachRoute[];
 };
-
+// configure menu
 export const ROUTES: EachRoute[] = [
   {
     title: "Getting Started",
@@ -39,6 +39,14 @@ export const ROUTES: EachRoute[] = [
       { title: "Themes", href: "/themes" },
       {
         title: "Customize", href: "/customize",
+      },
+      {
+        title: "Deployment",
+        href: "/deployment",
+        items: [
+          { title: "Vercel", href: "/vercel" },
+          { title: "Nginx", href: "/nginx" },
+        ],
       },
     ],
   },

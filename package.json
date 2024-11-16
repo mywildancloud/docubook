@@ -1,7 +1,7 @@
 {
   "name": "docubook",
   "version": "1.0.5",
-  "private": false,
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
