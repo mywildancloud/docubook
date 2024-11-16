@@ -16,7 +16,7 @@ export const NAVLINKS = [
   },
   {
     title: "Components",
-    href: "/getting-started/components",
+    href: "docs/getting-started/components",
   },
   {
     title: "Blog",
