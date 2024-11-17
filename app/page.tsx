@@ -1,8 +1,10 @@
 import { buttonVariants } from "@/components/ui/button";
 import { page_routes } from "@/lib/routes-config";
-import { MoveUpRightIcon, TerminalSquareIcon } from "lucide-react";
+import { TerminalSquareIcon, ArrowRightIcon } from "lucide-react";
 import { Settings } from "@/setting";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 
 export default function Home() {
   return (
@@ -12,8 +14,18 @@ export default function Home() {
         target="_blank"
         className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
       >
-        Follow along on GitHub{" "}
-        <MoveUpRightIcon className="w-4 h-4 font-extrabold" />
+      <div className="z-10 flex min-h-5 items-center justify-center">
+      <div
+        className={cn(
+          "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
+          )}
+          >
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <span>🎉 Introducing DocuBook v.1.0.5</span>
+              <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+            </AnimatedShinyText>
+          </div>
+        </div>
       </Link>
       <h1 className="text-3xl font-bold mb-4 sm:text-6xl">
        {Settings.headline}
