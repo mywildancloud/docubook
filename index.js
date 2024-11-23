@@ -9,14 +9,11 @@ import inquirer from "inquirer";
 import { execSync } from "child_process";
 
 program
-  .version("1.0.5")
+  .version("1.0.6")
   .description("CLI to create a new Docubook project")
-  .argument(
-    "<project-directory>",
-    "Directory to create the new Docubook project"
-  )
+  .argument("[project-directory]", "Directory to create the new Docubook project")
   .action(async (projectDirectory) => {
-    // Periksa apakah Node.js dan pnpm terinstall
+    // Periksa apakah Node.js terinstal
     try {
       execSync("node -v", { stdio: "ignore" });
     } catch {
@@ -25,14 +22,17 @@ program
       process.exit(1);
     }
 
-    try {
-      execSync("pnpm -v", { stdio: "ignore" });
-    } catch {
-      console.warn(chalk.yellow("Warning: pnpm is not installed."));
-      console.log(
-        "You can install pnpm by running: npm install -g pnpm\n" +
-        "Alternatively, npm will be used to install dependencies."
-      );
+    // Jika argument directory kosong, tanyakan nama direktori
+    if (!projectDirectory) {
+      const { directoryName } = await inquirer.prompt([
+        {
+          type: "input",
+          name: "directoryName",
+          message: "Enter a name for your project directory:",
+          default: "docubook-project",
+        },
+      ]);
+      projectDirectory = directoryName;
     }
 
     // URL repo untuk degit tanpa pilihan template
@@ -53,30 +53,20 @@ program
         `Docubook project successfully created in ${projectPath}!`
       );
 
-      // Pilih paket manager antara npm atau pnpm jika tersedia
-      const { packageManager } = await inquirer.prompt([
-        {
-          type: "list",
-          name: "packageManager",
-          message: "Choose your package manager:",
-          choices: ["npm", "pnpm"],
-          default: execSync("pnpm -v", { stdio: "ignore" }) ? "pnpm" : "npm",
-        },
-      ]);
-
       console.log(chalk.blue("\nNext steps:"));
       console.log(`1. Navigate to your project directory:`);
       console.log(`   cd ${projectDirectory}`);
-      
-      // Command install dependencies
       console.log(`2. Install dependencies:`);
-      console.log(`   ${packageManager} install`);
+      console.log(`   npm install`);
       console.log(`3. Start the development server:`);
-      console.log(`   ${packageManager} run dev`);
-      
+      console.log(`   npm run dev`);
+
+      // Keluar dari proses CLI setelah sukses
+      process.exit(0);
     } catch (err) {
       spinner.fail("Error creating project:");
       console.error(err.message);
+      process.exit(1); // Keluar dengan status error
     }
   });
 
