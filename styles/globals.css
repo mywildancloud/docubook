@@ -4,62 +4,62 @@
 
 @import url("../styles/syntax.css");
 
-/* indigo */
+/* ocean */
 @layer base {
-  :root {
-      --background: 240 60% 95%; /* Soft light indigo */
-      --foreground: 250 30% 15%; /* Deep indigo */
-      --card: 240 50% 98%; /* Almost white indigo */
-      --card-foreground: 250 30% 15%;
-      --popover: 240 50% 98%;
-      --popover-foreground: 250 30% 15%;
-      --primary: 240 70% 60%; /* Vibrant indigo */
-      --primary-foreground: 240 60% 95%;
-      --secondary: 240 50% 85%; /* Light lavender */
-      --secondary-foreground: 250 30% 15%;
-      --muted: 240 50% 85%;
-      --muted-foreground: 250 30% 40%; /* Soft plum */
-      --accent: 240 80% 50%; /* Strong indigo */
-      --accent-foreground: 0 0% 100%; /* Pure white */
-      --destructive: 0 65% 55%; /* Soft red */
-      --destructive-foreground: 240 30% 95%; /* Lightened foreground */
-      --border: 240 20% 90%; /* Light lavender-grey */
-      --input: 240 20% 90%;
-      --ring: 240 60% 50%; /* Cool indigo ring */
-      --radius: 0.5rem;
-      --chart-1: 240 70% 50%; /* Classic indigo */
-      --chart-2: 240 50% 65%; /* Soft lavender */
-      --chart-3: 240 80% 60%; /* Bright indigo */
-      --chart-4: 240 60% 55%; /* Ocean indigo */
-      --chart-5: 260 30% 40%; /* Deep purple */
-  }
+    :root {
+        --background: 210 50% 95%; /* Soft light blue */
+        --foreground: 220 20% 15%; /* Deep navy */
+        --card: 210 40% 98%; /* Almost white blue */
+        --card-foreground: 220 20% 15%;
+        --popover: 210 40% 98%;
+        --popover-foreground: 220 20% 15%;
+        --primary: 220 80% 60%; /* Vibrant azure blue */
+        --primary-foreground: 210 50% 95%;
+        --secondary: 220 30% 85%; /* Light sky blue */
+        --secondary-foreground: 220 20% 15%;
+        --muted: 220 30% 85%;
+        --muted-foreground: 220 20% 40%; /* Soft steel blue */
+        --accent: 200 70% 40%; /* Strong ocean blue */
+        --accent-foreground: 0 0% 100%; /* Pure white */
+        --destructive: 0 65% 55%; /* Soft red */
+        --destructive-foreground: 220 20% 95%; /* Lightened foreground */
+        --border: 220 15% 90%; /* Light grey-blue */
+        --input: 220 15% 90%;
+        --ring: 220 40% 50%; /* Cool blue ring */
+        --radius: 0.5rem;
+        --chart-1: 210 60% 50%; /* Classic blue */
+        --chart-2: 220 40% 65%; /* Soft sky */
+        --chart-3: 220 70% 50%; /* Azure blue */
+        --chart-4: 200 60% 55%; /* Ocean blue */
+        --chart-5: 240 30% 40%; /* Deep teal */
+    }
 
-  .dark {
-      --background: 250 30% 10%; /* Midnight indigo */
-      --foreground: 240 80% 90%; /* Soft lavender */
-      --card: 250 30% 12%; /* Slightly lighter midnight */
-      --card-foreground: 240 80% 90%;
-      --popover: 250 30% 12%;
-      --popover-foreground: 240 80% 90%;
-      --primary: 240 70% 60%; /* Soft bright indigo */
-      --primary-foreground: 250 30% 10%;
-      --secondary: 250 40% 15%; /* Dark plum */
-      --secondary-foreground: 240 80% 90%;
-      --muted: 250 40% 15%;
-      --muted-foreground: 240 20% 85%; /* Pale indigo */
-      --accent: 240 80% 60%; /* Vibrant indigo */
-      --accent-foreground: 240 80% 90%;
-      --destructive: 0 65% 55%; /* Soft red */
-      --destructive-foreground: 240 80% 90%;
-      --border: 250 40% 15%; /* Dark plum */
-      --input: 250 40% 15%;
-      --ring: 240 70% 60%; /* Vivid indigo ring */
-      --chart-1: 240 70% 50%; /* Classic indigo */
-      --chart-2: 240 50% 65%; /* Soft lavender */
-      --chart-3: 240 80% 60%; /* Bright indigo */
-      --chart-4: 240 60% 55%; /* Ocean indigo */
-      --chart-5: 260 30% 40%; /* Deep purple */
-  }
+    .dark {
+        --background: 220 20% 10%; /* Midnight navy */
+        --foreground: 220 80% 90%; /* Soft sky blue */
+        --card: 220 20% 12%; /* Slightly lighter midnight */
+        --card-foreground: 220 80% 90%;
+        --popover: 220 20% 12%;
+        --popover-foreground: 220 80% 90%;
+        --primary: 210 70% 60%; /* Soft bright blue */
+        --primary-foreground: 220 20% 10%;
+        --secondary: 220 30% 15%; /* Dark steel blue */
+        --secondary-foreground: 220 80% 90%;
+        --muted: 220 30% 15%;
+        --muted-foreground: 210 20% 85%; /* Pale navy */
+        --accent: 220 80% 60%; /* Vibrant azure blue */
+        --accent-foreground: 220 80% 90%;
+        --destructive: 0 65% 55%; /* Soft red */
+        --destructive-foreground: 220 80% 90%;
+        --border: 220 30% 15%; /* Dark steel blue */
+        --input: 220 30% 15%;
+        --ring: 220 60% 60%; /* Vivid blue ring */
+        --chart-1: 210 60% 50%; /* Classic blue */
+        --chart-2: 220 40% 65%; /* Soft sky */
+        --chart-3: 220 70% 50%; /* Azure blue */
+        --chart-4: 200 60% 55%; /* Ocean blue */
+        --chart-5: 240 30% 40%; /* Deep teal */
+    }
 }
 
 @layer base {
