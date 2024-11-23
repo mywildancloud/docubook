@@ -34,6 +34,7 @@ export const ROUTES: EachRoute[] = [
           { title: "Image & Link", href: "/image-link" },
           { title: "Youtube", href: "/youtube" },
           { title: "Tooltips", href: "/tooltips" },
+          { title: "Card", href: "/card" },
           { title: "Custom", href: "/custom" },
         ],
       },

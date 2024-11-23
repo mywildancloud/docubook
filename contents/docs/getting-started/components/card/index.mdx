@@ -1,0 +1,63 @@
+---
+title: Card
+description: This section previews the Card component.
+---
+
+I have implemented the `card` component into markdown which is ready to use.
+
+## Preview
+
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <Card>
+    <Card.Title title="Heading" icon="Heading" />
+    <Card.Description description="Your description card here! change this text" />
+  </Card>
+  <Card>
+    <Card.Title title="Link" icon="Link" />
+    <Card.Description description="Your description card here! change this text" />
+  </Card>
+  <Card>
+    <Card.Title title="Images" icon="Images" />
+    <Card.Description description="Your description card here! change this text" />
+  </Card>
+  <Card>
+    <Card.Title title="Code Block" icon="Code" />
+    <Card.Description description="Your description card here! change this text" />
+  </Card>
+</div>
+
+## Props
+
+| Prop          | Type     | Default | Description                                            |
+| ------------- | -------- | ------- | ------------------------------------------------------ |
+| `title`       | `string` | `""`    | The value of card title.                               |
+| `description` | `string` | `""`    | The value of card description.                         |
+| `icon`        | `string` | `""`    | The value of card icon render from lucide.             |
+| `className`   | `string` | `""`    | Additional CSS classes for styling the Tabs component. |
+
+## Code
+
+```bash
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <Card>
+    <Card.Title title="Heading" icon="Heading" />
+    <Card.Description description="Your description card here! change this text" />
+  </Card>
+  <Card>
+    <Card.Title title="Link" icon="Link" />
+    <Card.Description description="Your description card here! change this text" />
+  </Card>
+  <Card>
+    <Card.Title title="Images" icon="Images" />
+    <Card.Description description="Your description card here! change this text" />
+  </Card>
+  <Card>
+    <Card.Title title="Code Block" icon="Code" />
+    <Card.Description description="Your description card here! change this text" />
+  </Card>
+</div>
+```
+
+```
+
+```
