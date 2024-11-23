@@ -14,21 +14,21 @@ export default function Home() {
         target="_blank"
         className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
       >
-      <div className="z-10 flex min-h-5 items-center justify-center">
-      <div
-        className={cn(
-          "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
-          )}
+        <div className="z-10 flex min-h-5 items-center justify-center">
+          <div
+            className={cn(
+              "group rounded-full border border-white/5 bg-black/5 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-accent dark:border-white/5 dark:bg-transparent dark:hover:bg-accent",
+            )}
           >
-            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <span>🎉 Introducing DocuBook v.1.0.5</span>
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-100 hover:duration-300 hover:dark:text-neutral-200">
+              <span>🚀 Introducing DocuBook v.1.0.6</span>
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </div>
         </div>
       </Link>
       <h1 className="text-3xl font-bold mb-4 sm:text-6xl">
-       {Settings.headline}
+        {Settings.headline}
       </h1>
       <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
         {Settings.subheadline}
@@ -36,7 +36,11 @@ export default function Home() {
       <div className="flex flex-row items-center gap-5">
         <Link
           href={`/docs${page_routes[0].href}`}
-          className={buttonVariants({ className: "px-6", size: "lg" })}
+          className={buttonVariants({
+            className:
+              "px-6 bg-accent text-white hover:bg-primary dark:bg-accent dark:hover:bg-primary",
+            size: "lg",
+          })}
         >
           Get Started
         </Link>
@@ -44,7 +48,8 @@ export default function Home() {
           href="/blog"
           className={buttonVariants({
             variant: "secondary",
-            className: "px-6",
+            className:
+              "px-6 bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700",
             size: "lg",
           })}
         >

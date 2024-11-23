@@ -44,7 +44,7 @@ export function FooterButtons() {
       <Link
         href="https://vercel.com/import/project?template=https://github.com/mywildancloud/docubook"
         target="_blank"
-        className={buttonVariants({ variant: "outline", size: "sm" })}
+        className={buttonVariants({ variant: "outline", size: "sm"})}
       >
         <TriangleIcon className="h-[0.8rem] w-4 mr-2 text-primary fill-current" />
         Deploy
