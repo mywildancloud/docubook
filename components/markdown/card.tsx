@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
-import * as Icons from "lucide-react"; // Mengimpor semua ikon Lucide
+import * as Icons from "lucide-react";
+
+type IconName = keyof typeof Icons;
 
 // Props untuk Card utama
 interface CardProps {
@@ -9,7 +11,7 @@ interface CardProps {
 // Props untuk CardTitle
 interface CardTitleProps {
   title: string;
-  icon?: string; // Properti ikon berupa nama string
+  icon?: IconName; // Properti ikon berupa nama ikon yang valid
 }
 
 // Props untuk CardDescription
@@ -18,7 +20,10 @@ interface CardDescriptionProps {
 }
 
 // Komponen Card Utama
-export const Card: React.FC<CardProps> = ({ children }) => {
+const Card: React.FC<CardProps> & {
+  Title: React.FC<CardTitleProps>;
+  Description: React.FC<CardDescriptionProps>;
+} = ({ children }) => {
   return (
     <div className="border rounded-lg shadow-md overflow-hidden py-4 px-8">
       {children}
@@ -28,7 +33,7 @@ export const Card: React.FC<CardProps> = ({ children }) => {
 
 // Komponen Card Title
 Card.Title = ({ title, icon }: CardTitleProps) => {
-  const Icon = icon ? Icons[icon] : null; // Mencari ikon berdasarkan nama string
+  const Icon = icon ? (Icons[icon] as React.FC<{ className?: string }>) : null; // Tipe eksplisit sebagai React.FC
 
   return (
     <div className="flex flex-col space-y-1">
@@ -38,9 +43,15 @@ Card.Title = ({ title, icon }: CardTitleProps) => {
   );
 };
 
+// Menambahkan displayName untuk Card.Title
+Card.Title.displayName = "CardTitle";
+
 // Komponen Card Description
 Card.Description = ({ description }: CardDescriptionProps) => (
   <p className="text-gray-700 mt-2">{description}</p>
 );
+
+// Menambahkan displayName untuk Card.Description
+Card.Description.displayName = "CardDescription";
 
 export default Card;
