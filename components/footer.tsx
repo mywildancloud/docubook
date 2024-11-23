@@ -54,7 +54,7 @@ export function FooterButtons() {
         target="_blank"
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
-        <CoffeeIcon className="h-4 w-4 mr-2 text-red-500" />
+        <CoffeeIcon className="h-4 w-4 mr-2 text-primary" />
         Sponsor
       </Link>
     </>
