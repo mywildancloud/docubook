@@ -19,13 +19,12 @@ const EditThisPage: React.FC<EditThisPageProps> = ({ filePath }) => {
           display: 'inline-flex',
           alignItems: 'center',
           gap: '0.5rem',
-          color: '#0070f3',
           textDecoration: 'none',
           fontWeight: 'bold',
         }}
       >
-        <span>Edit this page</span>
-        <SquarePenIcon className="w-4 h-4" />
+        <span className='text-primary'>Edit this page</span>
+        <SquarePenIcon className="w-4 h-4 text-primary" />
       </a>
     </div>
   );
