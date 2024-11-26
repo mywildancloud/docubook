@@ -64,7 +64,7 @@ export function FooterButtons() {
 
 export function FooterLogo() {
   return (
-    <Link href="/" className="flex items-center gap-2.5 sm:block hidden">
+    <Link href="/" className="items-center gap-2.5 sm:flex hidden">
       <Image src="/images/docu.svg" alt="docu" width="24" height="24" />
     </Link>
   );
