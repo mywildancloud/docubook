@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buttonVariants } from "./ui/button";
 import { TriangleIcon, CoffeeIcon } from "lucide-react";
 import { Settings } from "@/setting";
@@ -64,7 +65,7 @@ export function FooterButtons() {
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
-      <img src="/images/docu.svg" alt="docu" width="24" height="24" />
+      <Image src="/images/docu.svg" alt="docu" width="24" height="24" />
     </Link>
   );
 }

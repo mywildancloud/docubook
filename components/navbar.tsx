@@ -1,6 +1,7 @@
 import { ModeToggle } from "@/components/theme-toggle";
 import { GithubIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { buttonVariants } from "./ui/button";
 import Search from "./search";
 import Anchor from "./anchor";
@@ -59,7 +60,7 @@ export function Navbar() {
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
-      <img src="/images/docu.svg" alt="docu" width="24" height="24" />
+      <Image src="/images/docu.svg" alt="docu" width="24" height="24" />
       <h2 className="text-md font-bold font-code">{Settings.title}</h2>
     </Link>
   );
