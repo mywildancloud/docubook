@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { GithubIcon , BookOpenTextIcon } from "lucide-react";
+import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import Search from "./search";
@@ -59,7 +59,7 @@ export function Navbar() {
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
-      <BookOpenTextIcon className="w-6 h-6 text-muted-foreground" strokeWidth={2} />
+      <img src="/images/docu.svg" alt="docu" width="24" height="24" />
       <h2 className="text-md font-bold font-code">{Settings.title}</h2>
     </Link>
   );

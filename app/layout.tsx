@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: `%s | ${Settings.title}`,
   },
   icons: {
-    icon: './favicon.ico',
+    icon: '/favicon.ico',
   },
 };
 

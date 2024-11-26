@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
-import { BookOpenTextIcon, TriangleIcon, CoffeeIcon } from "lucide-react";
+import { TriangleIcon, CoffeeIcon } from "lucide-react";
 import { Settings } from "@/setting";
 
 export function Footer() {
@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="border-t w-full h-16">
       <div className="container flex items-center sm:justify-between justify-center sm:gap-0 gap-4 h-full text-muted-foreground text-sm flex-wrap sm:py-0 py-3 max-sm:px-4">
         <div className="flex items-center gap-3">
-          <BookOpenTextIcon className="sm:block hidden w-5 h-5 text-muted-foreground" />
+          <Logo />
           <p className="text-center">
             Written by{" "}
             <Link
@@ -58,5 +58,13 @@ export function FooterButtons() {
         Sponsor
       </Link>
     </>
+  );
+}
+
+export function Logo() {
+  return (
+    <Link href="/" className="flex items-center gap-2.5">
+      <img src="/images/docu.svg" alt="docu" width="24" height="24" />
+    </Link>
   );
 }
