@@ -14,7 +14,7 @@ export default function Home() {
         target="_blank"
         className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
       >
-        <div className="z-10 flex min-h-5 items-center justify-center">
+        <div className="z-10 flex min-h-10 items-center justify-center max-[800px]:mt-10">
           <div
             className={cn(
               "group rounded-full border border-black/5 bg-black/5 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-accent dark:border-white/5 dark:bg-transparent dark:hover:bg-accent",
