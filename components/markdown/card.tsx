@@ -48,7 +48,7 @@ Card.Title.displayName = "CardTitle";
 
 // Komponen Card Description
 Card.Description = ({ description }: CardDescriptionProps) => (
-  <p className="text-gray-700 mt-2">{description}</p>
+  <p className="text-muted-foreground text-[16.5px] mt-2">{description}</p>
 );
 
 // Menambahkan displayName untuk Card.Description
