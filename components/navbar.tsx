@@ -12,12 +12,16 @@ import { Settings } from "@/setting";
 
 export const NAVLINKS = [
   {
-    title: "Documentations",
+    title: "Docs",
     href: `/docs${page_routes[0].href}`,
   },
   {
     title: "Blog",
     href: "/blog",
+  },
+  {
+    title: "Playground",
+    href: "https://playground-docu.vercel.app/",
   },
 ];
 
