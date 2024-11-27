@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="flex sm:min-h-[92vh] min-h-[85vh] flex-col items-center justify-center text-center px-2 py-8">
       <Link
-        href={Settings.github}
+        href="https://github.com/mywildancloud/docubook/releases"
         target="_blank"
         className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
       >
