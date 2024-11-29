@@ -55,15 +55,6 @@ export default async function BlogPage({ params: { slug } }: PageProps) {
         </div>
       </div>
       <div className="!w-full">
-        <div className="w-full mb-7">
-          <Image
-            src={res.frontmatter.cover}
-            alt="cover"
-            width={700}
-            height={400}
-            className="w-full h-[400px] rounded-md border object-cover"
-          />
-        </div>
         <Typography>{res.content}</Typography>
       </div>
     </div>

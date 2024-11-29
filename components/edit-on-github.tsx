@@ -10,7 +10,7 @@ const EditThisPage: React.FC<EditThisPageProps> = ({ filePath }) => {
   const editUrl = `${repoUrl}/blob/main/${filePath}`;
 
   return (
-    <div style={{ marginTop: '2rem', textAlign: 'right' }}>
+    <div style={{ textAlign: 'right' }}>
       <a
         href={editUrl}
         target='_blank'
@@ -23,7 +23,7 @@ const EditThisPage: React.FC<EditThisPageProps> = ({ filePath }) => {
           fontWeight: 'bold',
         }}
       >
-        <span className='text-primary'>Edit this page</span>
+        <span className='text-primary text-sm'>Edit this page on Github</span>
         <SquarePenIcon className="w-4 h-4 text-primary" />
       </a>
     </div>

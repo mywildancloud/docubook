@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { getDocsForSlug } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
 import EditThisPage from "@/components/edit-on-github";
+import { formatDate2 } from "@/lib/utils";
 
 type PageProps = {
   params: { slug: string[] };
@@ -20,6 +21,9 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   // Path file untuk link edit
   const filePath = `contents/docs/${slug.join("/") || ""}/index.mdx`;
 
+  // Ambil tanggal publikasi dari frontmatter
+  const publishDate = res.frontmatter.date;
+
   return (
     <div className="flex items-start gap-10">
       <div className="flex-[4.5] pt-10">
@@ -30,7 +34,15 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
             {res.frontmatter.description}
           </p>
           <div>{res.content}</div>
-          <EditThisPage filePath={filePath} />
+          <div className="my-8 flex justify-between items-center border-b-2 border-x-muted-foreground">
+            {/* Tampilkan tanggal publikasi jika ada */}
+            {publishDate && (
+              <p className="text-[13px] text-muted-foreground">
+                Published on {formatDate2(publishDate)}
+              </p>
+            )}
+            <EditThisPage filePath={filePath} />
+          </div>
           <Pagination pathname={pathName} />
         </Typography>
       </div>
