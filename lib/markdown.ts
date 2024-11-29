@@ -65,6 +65,7 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
 // logic for docs
 
 export type BaseMdxFrontmatter = {
+  date: any;
   title: string;
   description: string;
 };
