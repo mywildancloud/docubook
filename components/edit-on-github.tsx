@@ -23,7 +23,7 @@ const EditThisPage: React.FC<EditThisPageProps> = ({ filePath }) => {
           fontWeight: 'bold',
         }}
       >
-        <span className='text-primary text-sm'>Edit this page on Github</span>
+        <span className='text-primary text-sm max-[480px]:hidden'>Edit this page on Github</span>
         <SquarePenIcon className="w-4 h-4 text-primary" />
       </a>
     </div>
