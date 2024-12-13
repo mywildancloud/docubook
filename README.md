@@ -16,22 +16,25 @@
 
 ## Installation
 
-1. Clone this repository :
-   ```bash
-   git clone https://github.com/mywildancloud/docubook.git
-   ```
-2. Go to the project directory :
-
 ```bash
- cd docubook
+npx create_docu
 ```
 
-3. Install dependencies :
-   ```bash
+### command output
+
+```bash
+? Enter a name for your project directory: (docubook)
+
+Creating a new Docubook project in /Users/wildan/docubook from the main branch...
+✔ Docubook project successfully created in /Users/wildan/docubook!
+
+Next steps:
+1. Navigate to your project directory:
+   cd docubook
+2. Install dependencies:
    npm install
-   ```
-4. Run the application :
-   ```bash
+3. Start the development server:
    npm run dev
-   ```
-   Access the app on => http://localhost:3000.
+```
+
+> Access the app on => http://localhost:3000.
