@@ -21,7 +21,7 @@ export default function Home() {
             )}
           >
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-100 hover:duration-300 hover:dark:text-neutral-200">
-              <span>🚀 Introducing DocuBook v.1.0.6</span>
+              <span>🚀 Introducing DocuBook v.1.0.7</span>
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </div>
@@ -58,7 +58,7 @@ export default function Home() {
       </div>
       <span className="flex flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-7 -mb-12 max-[800px]:mb-12 font-code text-base font-medium">
         <TerminalSquareIcon className="w-5 h-5 mr-1 mt-0.5" />
-        {"npx create-docubook <project-directory>"}
+        {"npx create_docu <project-directory>"}
       </span>
     </div>
   );
