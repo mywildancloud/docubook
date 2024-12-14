@@ -4,7 +4,14 @@ import Link from "next/link";
 
 // Mendeklarasikan tipe IconName berdasarkan nama ikon yang tersedia dalam objek Icons
 type IconName = keyof typeof Icons;
-
+type ButtonProps = {
+  icon?: keyof typeof Icons;
+  text?: string;
+  href: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
+  size?: "sm" | "md" | "lg";
+  variation?: "primary" | "accent" | "outline";
+};
 // Mendeklarasikan interface untuk props Button
 interface ButtonProps {
   icon?: IconName; // Menggunakan IconName untuk memastikan hanya ikon yang valid
