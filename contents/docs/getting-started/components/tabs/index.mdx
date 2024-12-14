@@ -1,6 +1,7 @@
 ---
 title: Tabs
 description: This section previews the Tabs component.
+date: 14-12-2024
 ---
 
 The `Tabs` component allows you to organize content into multiple sections, enabling users to switch between them easily. This is particularly useful for displaying related content in a compact manner.
@@ -35,14 +36,14 @@ The `Tabs` component allows you to organize content into multiple sections, enab
 
 ## Props
 
-| Prop        | Type   | Default     | Description                                      |
-|-------------|--------|-------------|--------------------------------------------------|
-| `defaultValue` | `string` | `null` | The value of the tab that is selected by default. |
-| `className` | `string` | `""` | Additional CSS classes for styling the Tabs component. |
+| Prop           | Type     | Default | Description                                            |
+| -------------- | -------- | ------- | ------------------------------------------------------ |
+| `defaultValue` | `string` | `null`  | The value of the tab that is selected by default.      |
+| `className`    | `string` | `""`    | Additional CSS classes for styling the Tabs component. |
 
 ## Code
 
-```jsx
+````jsx
 <Tabs defaultValue="java" className="pt-5 pb-1">
   <TabsList>
     <TabsTrigger value="java">Java</TabsTrigger>
@@ -66,3 +67,4 @@ The `Tabs` component allows you to organize content into multiple sections, enab
     helloWorld();
     ```</TabsContent>
 </Tabs>
+````
