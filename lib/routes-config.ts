@@ -43,14 +43,6 @@ export const ROUTES: EachRoute[] = [
       {
         title: "Customize", href: "/customize",
       },
-      {
-        title: "Deployment",
-        href: "/deployment",
-        items: [
-          { title: "Vercel", href: "/vercel" },
-          { title: "Nginx", href: "/nginx" },
-        ],
-      },
     ],
   },
 ];

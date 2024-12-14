@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { GithubIcon } from "lucide-react";
+import { GithubIcon, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { buttonVariants } from "./ui/button";
@@ -74,6 +74,9 @@ export function NavMenu({ isSheet = false }) {
   return (
     <>
       {NAVLINKS.map((item) => {
+        // Determine if the link is external
+        const isExternal = item.href.startsWith("http");
+
         const Comp = (
           <Anchor
             key={item.title + item.href}
@@ -81,8 +84,11 @@ export function NavMenu({ isSheet = false }) {
             absolute
             className="flex items-center gap-1 dark:text-stone-300/85 text-stone-800"
             href={item.href}
+            target={isExternal ? "_blank" : undefined} // Add target="_blank" for external links
+            rel={isExternal ? "noopener noreferrer" : undefined} // Add rel attribute for security with external links
           >
             {item.title}
+            {isExternal && <ArrowUpRight className="h-4 w-4 text-muted-foreground" />}
           </Anchor>
         );
         return isSheet ? (
