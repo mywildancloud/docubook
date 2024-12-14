@@ -21,6 +21,7 @@ import Outlet from "@/components/markdown/outlet";
 import Youtube from "@/components/markdown/youtube";
 import Tooltip from "@/components/markdown/tooltips";
 import Card from "@/components/markdown/card";
+import Button from "@/components/markdown/button";
 
 // add custom components
 const components = {
@@ -38,6 +39,7 @@ const components = {
   Youtube,
   Tooltip,
   Card,
+  Button,
 };
 
 // can be used for other pages like blogs, Guides etc
