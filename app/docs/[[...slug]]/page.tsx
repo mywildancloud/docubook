@@ -21,6 +21,13 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   const pathName = slug.join("/");
   const res = await getDocsForSlug(pathName);
   if (!res) notFound();
+  const { title, description, image } = res.frontmatter;
+  // Metadata dinamis
+  const metadata = getMetadata({
+    title,
+    description,
+    image: image ? `${process.env.NEXT_PUBLIC_BASE_URL}${image}` : undefined,
+  });
   // Path file untuk link edit
   const filePath = `contents/docs/${slug.join("/") || ""}/index.mdx`;
   // Ambil tanggal publikasi dari frontmatter

@@ -70,6 +70,7 @@ export type BaseMdxFrontmatter = {
   date: any;
   title: string;
   description: string;
+  image: string;
 };
 
 export async function getDocsForSlug(slug: string) {
