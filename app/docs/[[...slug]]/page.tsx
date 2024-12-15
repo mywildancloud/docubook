@@ -25,8 +25,8 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
 
   // Path absolut untuk `og:image`
   const ogImage = image
-    ? `${process.env.NEXT_PUBLIC_BASE_URL}/images/${image}`
-    : `${process.env.NEXT_PUBLIC_BASE_URL}/images/og-image.png`; // Gambar default jika `image` tidak ada
+    ? `${meta.baseURL}/images/${image}`
+    : `${meta.baseURL}/images/og-image.png`; // Gambar default jika `image` tidak ada
 
   // Path file untuk link edit
   const filePath = `contents/docs/${slug.join("/") || ""}/index.mdx`;
@@ -34,7 +34,6 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   return (
     <>
       <Head>
-        <title>{title}</title>
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
