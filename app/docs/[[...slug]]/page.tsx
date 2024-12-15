@@ -1,13 +1,39 @@
 import DocsBreadcrumb from "@/components/docs-breadcrumb";
 import Pagination from "@/components/pagination";
 import Toc from "@/components/toc";
-import { page_routes } from "@/lib/routes-config";
 import { notFound } from "next/navigation";
 import { getDocsForSlug } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
 import EditThisPage from "@/components/edit-on-github";
 import { formatDate2 } from "@/lib/utils";
 import { getMetadata } from "@/app/layout";
+
+export const metadata = async ({ params }: { params: { slug: string[] } }) => {
+  const slug = params.slug || [];
+  const pathName = slug.join("/");
+  const res = await getDocsForSlug(pathName);
+
+  if (!res) {
+    return getMetadata({
+      title: "404 - Page Not Found",
+      description: "The page you are looking for does not exist.",
+      image: `${process.env.NEXT_PUBLIC_BASE_URL}/images/og-image.png`, // Fallback to default og:image
+    });
+  }
+
+  const { title, description, image } = res.frontmatter;
+
+  // Path absolut untuk `og:image`
+  const ogImage = image
+    ? `${process.env.NEXT_PUBLIC_BASE_URL}/images/${image}`
+    : `${process.env.NEXT_PUBLIC_BASE_URL}/images/og-image.png`; // Gambar default jika `image` tidak ada
+
+  return getMetadata({
+    title,
+    description,
+    image: ogImage, // Gunakan `og:image` dari path absolut
+  });
+};
 
 type PageProps = {
   params: { slug: string[] };
