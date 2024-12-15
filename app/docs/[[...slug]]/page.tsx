@@ -7,11 +7,6 @@ import { Typography } from "@/components/typography";
 import EditThisPage from "@/components/edit-on-github";
 import { formatDate2 } from "@/lib/utils";
 import Head from "next/head";
-import { getMetadata } from "@/app/layout";
-
-export const metadata = getMetadata({
-  title: "Docs",
-});
 
 // Definisi tipe untuk props halaman
 type PageProps = {
@@ -39,6 +34,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   return (
     <>
       <Head>
+        <title>{title}</title>
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
