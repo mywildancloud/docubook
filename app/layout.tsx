@@ -22,7 +22,7 @@ const defaultMetadata: Metadata = {
     description: meta.description || "Default description for DocuBook",
     images: [
       {
-        url: new URL("/images/og-image.png", meta.baseURL).toString(),
+        url: `${meta.baseURL}/images/og-image.png`,
         width: 1200,
         height: 630,
         alt: String(meta.title || "DocuBook"), // Convert to string

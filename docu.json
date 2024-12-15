@@ -28,7 +28,7 @@
       "links": [
         {
           "text": "DocuBook",
-          "url": "https://www.docubook.pro/",
+          "url": "https://www.docubook.pro",
           "underline": true
         }
       ],
@@ -46,7 +46,7 @@
       ]
     },
     "meta": {
-      "baseURL": "https://github.com/mywildancloud/docubook",
+      "baseURL": "https://www.docubook.pro",
       "title": "DocuBook",
       "description": "DocuBook is a modern documentation platform for building, deploying, and managing your docs with ease.",
       "favicon": "/favicon.ico"
