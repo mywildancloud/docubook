@@ -29,6 +29,7 @@ const defaultMetadata: Metadata = {
       },
     ],
     locale: "en_US",
+    type: 'website',
   },
 };
 
