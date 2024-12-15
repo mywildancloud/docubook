@@ -1,13 +1,15 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Author, BlogMdxFrontmatter, getAllBlogs } from "@/lib/markdown";
 import { formatDate2, stringToDate } from "@/lib/utils";
-import { Metadata } from "next";
+import { getMetadata } from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "DocuBook - Blog",
-};
+export const metadata = getMetadata({
+  title: "Blog",
+  description: "Discover the latest updates, tutorials, and insights on DocuBook.",
+  // image: "https://github.com/mywildancloud/docubook/og-image.png",
+});
 
 export default async function BlogIndexPage() {
   const blogs = (await getAllBlogs()).sort(
@@ -17,10 +19,10 @@ export default async function BlogIndexPage() {
     <div className="w-full mx-auto flex flex-col gap-1 sm:min-h-[91vh] min-h-[88vh] pt-2">
       <div className="mb-7 flex flex-col gap-2">
         <h1 className="text-3xl font-extrabold">
-          The latest blogs of this product
+          Latest Blog Posts
         </h1>
         <p className="text-muted-foreground">
-          All the latest blogs and news, straight from the team.
+          Discover the latest updates, tutorials, and insights on DocuBook.
         </p>
       </div>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-4 mb-5">

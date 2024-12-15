@@ -7,7 +7,13 @@ import { getDocsForSlug } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
 import EditThisPage from "@/components/edit-on-github";
 import { formatDate2 } from "@/lib/utils";
+import { getMetadata } from "@/app/layout";
 
+export const metadata = getMetadata({
+  title: "Docs",
+  description: "Discover the latest updates, tutorials, and insights on DocuBook.",
+  // image: "https://github.com/mywildancloud/docubook/og-image.png",
+});
 type PageProps = {
   params: { slug: string[] };
 };

@@ -9,17 +9,42 @@ import "@/styles/globals.css";
 
 const { meta } = docuConfig; // Extract metadata from JSON
 
-export const metadata: Metadata = {
+// Default Metadata
+const defaultMetadata: Metadata = {
   metadataBase: new URL(meta.baseURL),
   description: meta.description,
-  title: {
-    default: meta.title,
-    template: `%s | ${meta.title}`,
-  },
+  title: `${meta.title}`, // Default title
   icons: {
     icon: meta.favicon,
   },
+  openGraph: {
+    title: meta.title,
+    description: meta.description,
+    images: `${meta.baseURL}/og-image.jpg`,
+  },
 };
+
+// Dynamic Metadata Getter
+export function getMetadata({
+  title,
+  description,
+  image,
+}: {
+  title?: string;
+  description?: string;
+  image?: string;
+}): Metadata {
+  return {
+    ...defaultMetadata,
+    title: title ? `${title} | ${meta.title}` : defaultMetadata.title,
+    description: description || defaultMetadata.description,
+    openGraph: {
+      title: title || defaultMetadata.openGraph?.title,
+      description: description || defaultMetadata.openGraph?.description,
+      images: image || defaultMetadata.openGraph?.images,
+    },
+  };
+}
 
 export default function RootLayout({
   children,
