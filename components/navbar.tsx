@@ -10,7 +10,7 @@ import { SheetClose } from "@/components/ui/sheet";
 import docuConfig from "@/docu.json"; // Import JSON
 
 export function Navbar() {
-  const { navbar, social } = docuConfig; // Extract navbar and social from JSON
+  const { social } = docuConfig; // Extract navbar and social from JSON
 
   return (
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">
@@ -59,7 +59,7 @@ export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
       <Image src={navbar.logo.src} alt={navbar.logo.alt} width="24" height="24" />
-      <h2 className="text-md font-bold font-code">{navbar.title}</h2>
+      <h2 className="text-md font-bold font-code">{navbar.logoText}</h2>
     </Link>
   );
 }
@@ -69,7 +69,7 @@ export function NavMenu({ isSheet = false }) {
 
   return (
     <>
-      {navbar.links.map((item) => {
+      {navbar.menu.map((item) => {
         const isExternal = item.href.startsWith("http");
 
         const Comp = (

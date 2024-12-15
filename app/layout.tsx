@@ -12,20 +12,20 @@ const { meta } = docuConfig; // Extract metadata from JSON
 // Default Metadata
 const defaultMetadata: Metadata = {
   metadataBase: new URL(meta.baseURL),
-  description: meta.description || "Default description for DocuBook",
-  title: meta.title || "DocuBook",
+  description: meta.description,
+  title: meta.title,
   icons: {
-    icon: meta.favicon || "/favicon.ico",
+    icon: meta.favicon,
   },
   openGraph: {
-    title: meta.title || "DocuBook",
-    description: meta.description || "Default description for DocuBook",
+    title: meta.title,
+    description: meta.description,
     images: [
       {
         url: `${meta.baseURL}/images/og-image.png`,
         width: 1200,
         height: 630,
-        alt: String(meta.title || "DocuBook"),
+        alt: String(meta.title),
       },
     ],
     locale: "en_US",
@@ -56,7 +56,7 @@ export function getMetadata({
               url: image,
               width: 1200,
               height: 630,
-              alt: String(title || defaultMetadata.openGraph?.title || "DocuBook"), // Pastikan hanya string
+              alt: String(title || defaultMetadata.openGraph?.title), // Pastikan hanya string
             },
           ]
         : defaultMetadata.openGraph?.images,

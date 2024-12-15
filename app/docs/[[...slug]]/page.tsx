@@ -8,8 +8,14 @@ import EditThisPage from "@/components/edit-on-github";
 import { formatDate2 } from "@/lib/utils";
 import Head from "next/head";
 import docuConfig from "@/docu.json"; // Import JSON
+import { getMetadata } from "@/app/layout";
 
 const { meta } = docuConfig; // Extract metadata from JSON
+
+export const metadata = getMetadata({
+  title: "Docs",
+  description: "Discover the latest updates, tutorials, and insights on DocuBook.",
+});
 
 // Definisi tipe untuk props halaman
 type PageProps = {
@@ -30,7 +36,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   const ogImage = image
     ? `${meta.baseURL}/images/${image}`
     : `${meta.baseURL}/images/og-image.png`; // Gambar default jika `image` tidak ada
-
+  
   // Path file untuk link edit
   const filePath = `contents/docs/${slug.join("/") || ""}/index.mdx`;
 
@@ -41,7 +47,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_BASE_URL}/docs/${slug.join("/")}`} />
+        <meta property="og:url" content={`${meta.baseURL}/docs/${slug.join("/")}`} />
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <div className="flex items-start gap-10">

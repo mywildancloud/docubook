@@ -1,6 +1,7 @@
 import React from 'react';
 import docuConfig from '@/docu.json'; // Import JSON
 import { SquarePenIcon } from 'lucide-react';
+import Link from 'next/link';
 
 interface EditThisPageProps {
   filePath: string;
@@ -12,7 +13,7 @@ const EditThisPage: React.FC<EditThisPageProps> = ({ filePath }) => {
 
   return (
     <div style={{ textAlign: 'right' }}>
-      <a
+      <Link
         href={editUrl}
         target='_blank'
         rel="noopener noreferrer"
@@ -26,7 +27,7 @@ const EditThisPage: React.FC<EditThisPageProps> = ({ filePath }) => {
       >
         <span className='text-primary text-sm max-[480px]:hidden'>Edit this page on Github</span>
         <SquarePenIcon className="w-4 h-4 text-primary" />
-      </a>
+      </Link>
     </div>
   );
 };
