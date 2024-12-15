@@ -1,13 +1,14 @@
 import React from 'react';
-import { Settings } from '@/setting';
+import docuConfig from '@/docu.json'; // Import JSON
 import { SquarePenIcon } from 'lucide-react';
+
 interface EditThisPageProps {
   filePath: string;
 }
 
 const EditThisPage: React.FC<EditThisPageProps> = ({ filePath }) => {
-  const repoUrl = Settings.github;
-  const editUrl = `${repoUrl}/blob/main/${filePath}`;
+  const { repository } = docuConfig;
+  const editUrl = `${repository.url}${repository.editPathTemplate.replace("{filePath}", filePath)}`;
 
   return (
     <div style={{ textAlign: 'right' }}>

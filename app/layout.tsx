@@ -4,18 +4,20 @@ import { Navbar } from "@/components/navbar";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Footer } from "@/components/footer";
-import { Settings } from "@/setting";
+import docuConfig from "@/docu.json"; // Import JSON
 import "@/styles/globals.css";
 
+const { meta } = docuConfig; // Extract metadata from JSON
+
 export const metadata: Metadata = {
-  metadataBase: new URL(Settings.github),
-  description: Settings.description,
+  metadataBase: new URL(meta.baseURL),
+  description: meta.description,
   title: {
-    default: Settings.title,
-    template: `%s | ${Settings.title}`,
+    default: meta.title,
+    template: `%s | ${meta.title}`,
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: meta.favicon,
   },
 };
 

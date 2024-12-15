@@ -1,7 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { page_routes } from "@/lib/routes-config";
 import { TerminalSquareIcon, ArrowRightIcon } from "lucide-react";
-import { Settings } from "@/setting";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
@@ -21,17 +20,18 @@ export default function Home() {
             )}
           >
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-100 hover:duration-300 hover:dark:text-neutral-200">
-              <span>🚀 Introducing DocuBook v.1.0.7</span>
+              <span>🚀 Introducing DocuBook v.1.1.0</span>
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </div>
         </div>
       </Link>
       <h1 className="text-3xl font-bold mb-4 sm:text-6xl">
-        {Settings.headline}
+        DocuBook: Unify Your Project Knowledge Seamlessly with modern Documentation
       </h1>
       <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
-        {Settings.subheadline}
+        a Documentation website built with Next.js, TypeScript, and Tailwind CSS. It features fast load times, SEO optimization, intuitive navigation, search functionality,
+         and markdown-based content management, making it ideal for organized, easily updated documentation.
       </p>
       <div className="flex flex-row items-center gap-5">
         <Link

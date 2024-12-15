@@ -1,33 +1,28 @@
 import Link from "next/link";
-import Image from "next/image";
 import { buttonVariants } from "./ui/button";
-import { TriangleIcon, CoffeeIcon } from "lucide-react";
-import { Settings } from "@/setting";
+import docuConfig from "@/docu.json"; // Import JSON
 
 export function Footer() {
+  const { footer } = docuConfig; // Extract footer from JSON
+
   return (
     <footer className="border-t w-full h-16">
       <div className="container flex items-center sm:justify-between justify-center sm:gap-0 gap-4 h-full text-muted-foreground text-sm flex-wrap sm:py-0 py-3 max-sm:px-4">
         <div className="flex items-center gap-3">
-          <FooterLogo />
           <p className="text-center">
-            Written by{" "}
-            <Link
-              className="px-1 underline underline-offset-2"
-              href={Settings.authorUrl}
-              target="_blank"
-            >
-              {Settings.author}
-            </Link>
-            . Crafted with love using{" "}
-            <Link
-              className="px-1 underline underline-offset-2"
-              href={Settings.github}
-              target="_blank"
-            >
-              DocuBook
-            </Link>
-            .
+            {footer.text.replace("{year}", new Date().getFullYear().toString())}{" "}
+            {footer.links.map((link, index) => (
+              <Link
+                key={index}
+                className={`px-1 ${
+                  link.underline ? "underline underline-offset-2" : ""
+                }`}
+                href={link.url}
+                target="_blank"
+              >
+                {link.text}
+              </Link>
+            ))}
           </p>
         </div>
 
@@ -40,32 +35,24 @@ export function Footer() {
 }
 
 export function FooterButtons() {
+  const { footer } = docuConfig; // Extract footer from JSON
+
   return (
     <>
-      <Link
-        href="https://vercel.com/import/project?template=https://github.com/mywildancloud/docubook"
-        target="_blank"
-        className={buttonVariants({ variant: "outline", size: "sm"})}
-      >
-        <TriangleIcon className="h-[0.8rem] w-4 mr-2 text-primary fill-current" />
-        Deploy
-      </Link>
-      <Link
-        href="https://trakteer.id/wildan.nrs/tip?quantity=5"
-        target="_blank"
-        className={buttonVariants({ variant: "outline", size: "sm" })}
-      >
-        <CoffeeIcon className="h-4 w-4 mr-2 text-primary" />
-        Sponsor
-      </Link>
+      {footer.buttons.map((button, index) => {
+        const Icon = require("lucide-react")[button.iconName]; // Dynamically load icon
+        return (
+          <Link
+            key={index}
+            href={button.url}
+            target="_blank"
+            className={buttonVariants({ variant: "outline", size: "sm"})}
+          >
+            <Icon className="h-4 w-4 mr-2 text-primary" />
+            {button.text}
+          </Link>
+        );
+      })}
     </>
-  );
-}
-
-export function FooterLogo() {
-  return (
-    <Link href="/" className="items-center gap-2.5 sm:flex hidden">
-      <Image src="/images/docu.svg" alt="docu" width="24" height="24" />
-    </Link>
   );
 }

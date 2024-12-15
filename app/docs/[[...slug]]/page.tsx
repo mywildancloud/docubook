@@ -35,7 +35,6 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
           </p>
           <div>{res.content}</div>
           <div className="my-8 flex justify-between items-center border-b-2 border-x-muted-foreground">
-            {/* Tampilkan tanggal publikasi jika ada */}
             {publishDate && (
               <p className="text-[13px] text-muted-foreground">
                 Published on {formatDate2(publishDate)}

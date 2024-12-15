@@ -1,31 +1,17 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { GithubIcon, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { buttonVariants } from "./ui/button";
 import Search from "./search";
 import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
-import { page_routes } from "@/lib/routes-config";
 import { SheetClose } from "@/components/ui/sheet";
-import { Settings } from "@/setting";
-
-export const NAVLINKS = [
-  {
-    title: "Docs",
-    href: `/docs${page_routes[0].href}`,
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-  },
-  {
-    title: "Playground",
-    href: "https://playground-docu.vercel.app/",
-  },
-];
+import docuConfig from "@/docu.json"; // Import JSON
 
 export function Navbar() {
+  const { navbar, social } = docuConfig; // Extract navbar and social from JSON
+
   return (
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">
       <div className="sm:container mx-auto w-[95vw] h-full flex items-center justify-between md:gap-2">
@@ -44,14 +30,20 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
             <Search />
-            <div className="flex ml-2.5 sm:ml-0">
-              <Link
-                href={Settings.github}
-                target="_blank"
-                className={buttonVariants({ variant: "ghost", size: "icon" })}
-              >
-                <GithubIcon className="h-[1.1rem] w-[1.1rem]" />
-              </Link>
+            <div className="flex ml-2.5 sm:ml-0 gap-2">
+              {social.map((item) => {
+                const Icon = require("lucide-react")[item.iconName]; // Dynamically load icon
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.url}
+                    target="_blank"
+                    className={buttonVariants({ variant: "ghost", size: "icon" })}
+                  >
+                    <Icon className="h-[1.1rem] w-[1.1rem]" />
+                  </Link>
+                );
+              })}
               <ModeToggle />
             </div>
           </div>
@@ -62,19 +54,22 @@ export function Navbar() {
 }
 
 export function Logo() {
+  const { navbar } = docuConfig; // Extract navbar from JSON
+
   return (
     <Link href="/" className="flex items-center gap-2.5">
-      <Image src="/images/docu.svg" alt="docu" width="24" height="24" />
-      <h2 className="text-md font-bold font-code">{Settings.title}</h2>
+      <Image src={navbar.logo.src} alt={navbar.logo.alt} width="24" height="24" />
+      <h2 className="text-md font-bold font-code">{navbar.title}</h2>
     </Link>
   );
 }
 
 export function NavMenu({ isSheet = false }) {
+  const { navbar } = docuConfig; // Extract navbar from JSON
+
   return (
     <>
-      {NAVLINKS.map((item) => {
-        // Determine if the link is external
+      {navbar.links.map((item) => {
         const isExternal = item.href.startsWith("http");
 
         const Comp = (
@@ -84,8 +79,8 @@ export function NavMenu({ isSheet = false }) {
             absolute
             className="flex items-center gap-1 dark:text-stone-300/85 text-stone-800"
             href={item.href}
-            target={isExternal ? "_blank" : undefined} // Add target="_blank" for external links
-            rel={isExternal ? "noopener noreferrer" : undefined} // Add rel attribute for security with external links
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
           >
             {item.title}
             {isExternal && <ArrowUpRight className="h-4 w-4 text-muted-foreground" />}
