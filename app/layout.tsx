@@ -20,7 +20,16 @@ const defaultMetadata: Metadata = {
   openGraph: {
     title: meta.title,
     description: meta.description,
-    images: `${meta.baseURL}/og-image.jpg`,
+    images: [
+      {
+        url: `${meta.baseURL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: `${meta.title}`,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 
