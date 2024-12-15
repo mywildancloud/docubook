@@ -46,7 +46,7 @@
       ]
     },
     "meta": {
-      "baseURL": "https://github.com/mywildancloud/docubook",
+      "baseURL": "https://github.com/mywildancloud/docubook/blob/main/public",
       "title": "DocuBook",
       "description": "DocuBook is a modern documentation platform for building, deploying, and managing your docs with ease.",
       "favicon": "/favicon.ico"

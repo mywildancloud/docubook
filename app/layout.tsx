@@ -12,24 +12,23 @@ const { meta } = docuConfig; // Extract metadata from JSON
 // Default Metadata
 const defaultMetadata: Metadata = {
   metadataBase: new URL(meta.baseURL),
-  description: meta.description,
-  title: `${meta.title}`, // Default title
+  description: meta.description || "Default description for DocuBook",
+  title: meta.title || "DocuBook",
   icons: {
-    icon: meta.favicon,
+    icon: meta.favicon || "/favicon.ico",
   },
   openGraph: {
-    title: meta.title,
-    description: meta.description,
+    title: meta.title || "DocuBook",
+    description: meta.description || "Default description for DocuBook",
     images: [
       {
         url: `${meta.baseURL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: `${meta.title}`,
+        alt: String(meta.title || "DocuBook"), // Convert to string
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
   },
 };
 
@@ -50,7 +49,17 @@ export function getMetadata({
     openGraph: {
       title: title || defaultMetadata.openGraph?.title,
       description: description || defaultMetadata.openGraph?.description,
-      images: image || defaultMetadata.openGraph?.images,
+      images: image
+        ? [
+            {
+              url: image,
+              width: 1200,
+              height: 630,
+              alt: String(title || defaultMetadata.openGraph?.title || "DocuBook"), // Convert to string
+            },
+          ]
+        : defaultMetadata.openGraph?.images,
+      locale: defaultMetadata.openGraph?.locale || "en_US",
     },
   };
 }
