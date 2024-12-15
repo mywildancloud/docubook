@@ -12,7 +12,6 @@ import { getMetadata } from "@/app/layout";
 export const metadata = getMetadata({
   title: "Docs",
   description: "Discover the latest updates, tutorials, and insights on DocuBook.",
-  // image: "/og-image.png",
 });
 type PageProps = {
   params: { slug: string[] };
@@ -21,15 +20,12 @@ type PageProps = {
 export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   const pathName = slug.join("/");
   const res = await getDocsForSlug(pathName);
-
   if (!res) notFound();
-
   // Path file untuk link edit
   const filePath = `contents/docs/${slug.join("/") || ""}/index.mdx`;
-
   // Ambil tanggal publikasi dari frontmatter
   const publishDate = res.frontmatter.date;
-
+  
   return (
     <div className="flex items-start gap-10">
       <div className="flex-[4.5] pt-10">

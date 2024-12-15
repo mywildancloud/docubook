@@ -9,7 +9,6 @@ import { getMetadata } from "@/app/layout";
 export const metadata = getMetadata({
   title: "Home",
   // description: "Discover the latest updates, tutorials, and insights on DocuBook.",
-  // image: "/og-image.png",
 });
 
 export default function Home() {

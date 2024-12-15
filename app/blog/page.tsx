@@ -8,7 +8,6 @@ import Link from "next/link";
 export const metadata = getMetadata({
   title: "Blog",
   description: "Discover the latest updates, tutorials, and insights on DocuBook.",
-  // image: "/og-image.png",
 });
 
 export default async function BlogIndexPage() {

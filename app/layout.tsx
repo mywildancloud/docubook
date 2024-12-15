@@ -25,7 +25,7 @@ const defaultMetadata: Metadata = {
         url: `${meta.baseURL}/images/og-image.png`,
         width: 1200,
         height: 630,
-        alt: String(meta.title || "DocuBook"), // Convert to string
+        alt: String(meta.title || "DocuBook"),
       },
     ],
     locale: "en_US",
@@ -41,7 +41,7 @@ export function getMetadata({
 }: {
   title?: string;
   description?: string;
-  image?: string;
+  image?: string; // Tambahkan parameter untuk og:image
 }): Metadata {
   return {
     ...defaultMetadata,
@@ -56,11 +56,12 @@ export function getMetadata({
               url: image,
               width: 1200,
               height: 630,
-              alt: String(title || defaultMetadata.openGraph?.title || "DocuBook"), // Convert to string
+              alt: String(title || defaultMetadata.openGraph?.title || "DocuBook"), // Pastikan hanya string
             },
           ]
         : defaultMetadata.openGraph?.images,
       locale: defaultMetadata.openGraph?.locale || "en_US",
+      type: "website",
     },
   };
 }
