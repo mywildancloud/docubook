@@ -22,14 +22,14 @@ const defaultMetadata: Metadata = {
     description: meta.description || "Default description for DocuBook",
     images: [
       {
-        url: `${meta.baseURL}/images/og-image.png`,
+        url: new URL("/images/og-image.png", meta.baseURL).toString(),
         width: 1200,
         height: 630,
         alt: String(meta.title || "DocuBook"), // Convert to string
       },
     ],
     locale: "en_US",
-    type: 'website',
+    type: "website",
   },
 };
 
