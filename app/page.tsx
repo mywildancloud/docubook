@@ -27,7 +27,7 @@ export default function Home() {
         </div>
       </Link>
       <h1 className="text-3xl font-bold mb-4 sm:text-6xl">
-        DocuBook: Unify Your Project Knowledge Seamlessly with modern Documentation
+        Unify Your Project Knowledge Seamlessly with modern Documentation
       </h1>
       <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
         a Documentation website built with Next.js, TypeScript, and Tailwind CSS. It features fast load times, SEO optimization, intuitive navigation, search functionality,
@@ -58,7 +58,7 @@ export default function Home() {
       </div>
       <span className="flex flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-7 -mb-12 max-[800px]:mb-12 font-code text-base font-medium">
         <TerminalSquareIcon className="w-5 h-5 mr-1 mt-0.5" />
-        {"npx create_docu <project-directory>"}
+        {"npx create_docu"}
       </span>
     </div>
   );
