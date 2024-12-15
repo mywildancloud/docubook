@@ -7,6 +7,9 @@ import { Typography } from "@/components/typography";
 import EditThisPage from "@/components/edit-on-github";
 import { formatDate2 } from "@/lib/utils";
 import Head from "next/head";
+import docuConfig from "@/docu.json"; // Import JSON
+
+const { meta } = docuConfig; // Extract metadata from JSON
 
 // Definisi tipe untuk props halaman
 type PageProps = {
