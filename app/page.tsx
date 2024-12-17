@@ -32,7 +32,7 @@ export default function Home() {
           </div>
         </div>
       </Link>
-      <h1 className="text-3xl font-bold mb-4 sm:text-6xl">
+      <h1 className="text-2xl font-bold mb-4 sm:text-6xl">
         Unify Your Project Knowledge Seamlessly with modern Documentation
       </h1>
       <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
