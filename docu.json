@@ -39,9 +39,9 @@
           "iconName": "TriangleIcon"
         },
         {
-          "text": "Sponsor",
-          "url": "https://trakteer.id/wildan.nrs/tip?quantity=5",
-          "iconName": "CoffeeIcon"
+          "text": "Hire Me",
+          "url": "/hire-me",
+          "iconName": "FlameIcon"
         }
       ]
     },
