@@ -7,9 +7,9 @@ import Toc from "@/components/toc";
 import { Typography } from "@/components/typography";
 import EditThisPage from "@/components/edit-on-github";
 import { formatDate2 } from "@/lib/utils";
-import docuConfig from "@/docu.json"; // Konfigurasi JSON dengan baseURL
+import docuConfig from "@/docu.json"; // Base URL dari konfigurasi JSON
 
-const { meta } = docuConfig; // Extract baseURL dari JSON
+const { meta } = docuConfig;
 
 type PageProps = {
   params: {
@@ -25,35 +25,40 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
 
   const { title, description, image, date } = res.frontmatter;
 
-  // URL absolut untuk gambar og:image
+  // URL absolut eksplisit untuk og:image
   const ogImage = image
-    ? `${meta.baseURL}/images/${image}` // Jika image didefinisikan di frontmatter
-    : `${meta.baseURL}/images/og-image.png`; // Gambar default jika tidak ada
+    ? `${meta.baseURL}/images/${image}`
+    : `${meta.baseURL}/images/og-image.png`;
 
+  // Path file untuk link edit
   const filePath = `contents/docs/${slug.join("/") || ""}/index.mdx`;
 
   return (
     <>
+      {/* Metadata Open Graph */}
       <Head>
         <title>{`${title} | Docs`}</title>
         <meta name="description" content={description} />
 
-        {/* Open Graph Meta */}
+        {/* Open Graph */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:secure_url" content={ogImage} />
+        <meta property="og:image:type" content="image/png" /> {/* Sesuaikan format */}
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`${meta.baseURL}/docs/${slug.join("/")}`} />
 
         {/* Twitter Card */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
       </Head>
+
+      {/* Konten Halaman */}
       <div className="flex items-start gap-10">
         <div className="flex-[4.5] pt-10">
           <DocsBreadcrumb paths={slug} />
