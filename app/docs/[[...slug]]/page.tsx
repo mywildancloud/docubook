@@ -1,23 +1,16 @@
+import { notFound } from "next/navigation";
+import Head from "next/head";
+import { getDocsForSlug } from "@/lib/markdown";
 import DocsBreadcrumb from "@/components/docs-breadcrumb";
 import Pagination from "@/components/pagination";
 import Toc from "@/components/toc";
-import { notFound } from "next/navigation";
-import { getDocsForSlug } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
 import EditThisPage from "@/components/edit-on-github";
 import { formatDate2 } from "@/lib/utils";
-import Head from "next/head";
-import docuConfig from "@/docu.json"; // Import JSON
-import { getMetadata } from "@/app/layout";
+import docuConfig from "@/docu.json"; // Base URL dari config
 
-const { meta } = docuConfig; // Extract metadata from JSON
+const { meta } = docuConfig;
 
-export const metadata = getMetadata({
-  title: "Docs",
-  description: "Discover the latest updates, tutorials, and insights on DocuBook.",
-});
-
-// Definisi tipe untuk props halaman
 type PageProps = {
   params: {
     slug: string[];
@@ -32,17 +25,18 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
 
   const { title, description, image, date } = res.frontmatter;
 
-  // Path absolut untuk `og:image`
+  // Generate og:image URL
   const ogImage = image
-    ? `${meta.baseURL}/images/${image}`
-    : `${meta.baseURL}/images/og-image.png`; // Gambar default jika `image` tidak ada
-  
-  // Path file untuk link edit
+    ? `${meta.baseURL}/images/${image}` // Base URL dari konfigurasi
+    : `${meta.baseURL}/images/og-image.png`; // Fallback image jika tidak ada
+
   const filePath = `contents/docs/${slug.join("/") || ""}/index.mdx`;
 
   return (
     <>
       <Head>
+        <title>{`${title} | Docs`}</title>
+        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
