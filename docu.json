@@ -13,11 +13,6 @@
     },
     "social": [
       {
-        "name": "Instagram",
-        "url": "https://www.instagram.com/wildan.nrs/",
-        "iconName": "InstagramIcon"
-      },
-      {
         "name": "GitHub",
         "url": "https://github.com/mywildancloud/docubook",
         "iconName": "GithubIcon"
