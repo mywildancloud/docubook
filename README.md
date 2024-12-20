@@ -37,4 +37,4 @@ Next steps:
    npm run dev
 ```
 
-> Access the app on => http://localhost:3000.
+> Access the app on => http://localhost:3000
