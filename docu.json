@@ -19,14 +19,7 @@
       }
     ],
     "footer": {
-      "text": "Copyright © {year} DocuBook - Crafted with love using",
-      "links": [
-        {
-          "text": "DocuBook",
-          "url": "https://www.docubook.pro",
-          "underline": true
-        }
-      ],
+      "copyright": "DocuBook",
       "buttons": [
         {
           "text": "Deploy",
