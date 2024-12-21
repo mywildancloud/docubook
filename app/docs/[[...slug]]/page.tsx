@@ -23,7 +23,7 @@ export async function generateMetadata({ params: { slug = [] } }: PageProps) {
 
   if (!res) {
     return {
-      title: "Page Not Found | Docs",
+      title: "Page Not Found",
       description: "The requested page was not found.",
     };
   }
@@ -36,7 +36,7 @@ export async function generateMetadata({ params: { slug = [] } }: PageProps) {
     : `${meta.baseURL}/images/og-image.png`;
 
   return {
-    title: `${title} | Docs`,
+    title: `${title}`,
     description,
     openGraph: {
       title,
