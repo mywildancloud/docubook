@@ -45,7 +45,7 @@ export function getMetadata({
 }): Metadata {
   return {
     ...defaultMetadata,
-    title: title ? `${title} | ${meta.title}` : defaultMetadata.title,
+    title: title ? `${title}` : defaultMetadata.title,
     description: description || defaultMetadata.description,
     openGraph: {
       title: title || defaultMetadata.openGraph?.title,
