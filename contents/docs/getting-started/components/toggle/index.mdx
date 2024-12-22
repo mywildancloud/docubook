@@ -1,0 +1,90 @@
+---
+title: Toggle
+description: This section previews the Toggle component.
+date: 22-12-2024
+---
+
+I have implemented the `toggle` component into markdown which is ready to use.
+
+## Preview
+
+### HTML
+
+<Toggle
+  icon="List"
+  title="Feature List"
+  description="Explore available features"
+  content={
+    <div className="space-y-2">
+      <h4 className="font-medium">Key Features:</h4>
+      <ul className="list-disc list-inside">
+        <li>Customizable icons</li>
+        <li>Optional description text</li>
+        <li>Support for complex content</li>
+        <li>Smooth animations</li>
+      </ul>
+    </div>
+  }
+  defaultOpen={true}
+/>
+
+### Plain Text
+
+<Toggle
+  icon="Info"
+  title="Plain Text"
+  description="Plain Text on Toggle"
+  content="fill in the content in the form of plain text in the toggle props"
+  defaultOpen={false}
+/>
+
+## Props
+
+| Prop          | Type      | Default | Description                                                                            |
+| ------------- | --------- | ------- | -------------------------------------------------------------------------------------- |
+| `icon`        | `string`  | `null`  | The value of toggle icon render from lucide.                                           |
+| `title`       | `string`  | `null`  | The value of toggle title.                                                             |
+| `description` | `string`  | `null`  | The value of toggle description.                                                       |
+| `content`     | `string`  | `null`  | Flexible content, both HTML elements and plain text.                                   |
+| `defaultOpen` | `boolean` | `false` | You can change the value to `true` if you want the content to open when the page loads |
+
+## Code
+
+<Tabs defaultValue="plaintext" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="plaintext">Plain Text</TabsTrigger>
+    <TabsTrigger value="html">Html</TabsTrigger>
+  </TabsList>
+  <TabsContent value="plaintext">
+    ```plaintext
+    <Toggle
+      icon="Info"
+      title="Plain Text"
+      description="Plain Text on Toggle"
+      content="fill in the content in the form of plain text in the toggle props"
+      defaultOpen={false}
+    />
+    ```
+  </TabsContent>
+  <TabsContent value="html">
+    ```html
+    <Toggle
+      icon="List"
+      title="Feature List"
+      description="Explore available features"
+      content={
+        <div className="space-y-2">
+          <h4 className="font-medium">Key Features:</h4>
+          <ul className="list-disc list-inside">
+            <li>Customizable icons</li>
+            <li>Optional description text</li>
+            <li>Support for complex content</li>
+            <li>Smooth animations</li>
+          </ul>
+        </div>
+      }
+      defaultOpen={false}
+    />
+    ```
+  </TabsContent>
+</Tabs>
