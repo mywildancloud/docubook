@@ -1,7 +1,7 @@
 {
-  "name": "docubook",
+  "name": "@docu/docubook",
   "version": "1.2.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -47,5 +47,24 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.10",
     "typescript": "^5"
-  }
+  },
+  "description": "Unify Your Project Knowledge Seamlessly with modern Documentation",
+  "main": "postcss.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mywildancloud/docubook.git"
+  },
+  "keywords": [
+    "documentations",
+    "template"
+  ],
+  "author": "Wildan Nrs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mywildancloud/docubook/issues"
+  },
+  "homepage": "https://github.com/mywildancloud/docubook#readme"
 }
