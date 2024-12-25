@@ -22,7 +22,7 @@ import Youtube from "@/components/markdown/youtube";
 import Tooltip from "@/components/markdown/tooltips";
 import Card from "@/components/markdown/card";
 import Button from "@/components/markdown/button";
-import Toggle from "@/components/markdown/toggle";
+import Accordion from "@/components/markdown/accordion";
 
 // add custom components
 const components = {
@@ -41,7 +41,7 @@ const components = {
   Tooltip,
   Card,
   Button,
-  Toggle,
+  Accordion,
 };
 
 // can be used for other pages like blogs, Guides etc

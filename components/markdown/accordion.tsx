@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 type IconName = keyof typeof Icons;
 
-type ToggleProps = {
+type AccordionProps = {
     icon?: IconName;
     title: string;
     description?: string;
@@ -15,14 +15,14 @@ type ToggleProps = {
     className?: string;
 }
 
-const Toggle = ({
+const Accordion = ({
     icon,
     title,
     description,
     content,
     defaultOpen = false,
     className,
-}: ToggleProps) => {
+}: AccordionProps) => {
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
     const Icon = (icon ? Icons[icon] : Icons.ChevronRight) as React.ElementType;
@@ -55,4 +55,4 @@ const Toggle = ({
     );
 };
 
-export default Toggle;
+export default Accordion;

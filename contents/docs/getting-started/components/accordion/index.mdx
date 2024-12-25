@@ -1,17 +1,16 @@
 ---
-title: Toggle
-description: This section previews the Toggle component.
+title: Accordion
+description: This section previews the Accordion component.
 date: 22-12-2024
 ---
 
-I have implemented the `toggle` component into markdown which is ready to use.
+I have implemented the `accordion` component into markdown which is ready to use.
 
 ## Preview
 
 ### HTML
 
-<Toggle
-  icon="List"
+<Accordion
   title="Feature List"
   description="Explore available features"
   content={
@@ -30,23 +29,22 @@ I have implemented the `toggle` component into markdown which is ready to use.
 
 ### Plain Text
 
-<Toggle
-  icon="Info"
+<Accordion
   title="Plain Text"
-  description="Plain Text on Toggle"
-  content="fill in the content in the form of plain text in the toggle props"
+  description="Plain Text on Accordion"
+  content="fill in the content in the form of plain text in the Accordion props"
   defaultOpen={false}
 />
 
 ## Props
 
-| Prop          | Type      | Default | Description                                                                            |
-| ------------- | --------- | ------- | -------------------------------------------------------------------------------------- |
-| `icon`        | `string`  | `null`  | The value of toggle icon render from lucide.                                           |
-| `title`       | `string`  | `null`  | The value of toggle title.                                                             |
-| `description` | `string`  | `null`  | The value of toggle description.                                                       |
-| `content`     | `string`  | `null`  | Flexible content, both HTML elements and plain text.                                   |
-| `defaultOpen` | `boolean` | `false` | You can change the value to `true` if you want the content to open when the page loads |
+| Prop          | Type      | Default        | Description                                                                            |
+| ------------- | --------- | -------------- | -------------------------------------------------------------------------------------- |
+| `icon`        | `string`  | `ChevronRight` | The value of Accordion icon render from lucide.                                        |
+| `title`       | `string`  | `null`         | The value of Accordion title.                                                          |
+| `description` | `string`  | `null`         | The value of Accordion description.                                                    |
+| `content`     | `string`  | `null`         | Flexible content, both HTML elements and plain text.                                   |
+| `defaultOpen` | `boolean` | `false`        | You can change the value to `true` if you want the content to open when the page loads |
 
 ## Code
 
@@ -57,19 +55,17 @@ I have implemented the `toggle` component into markdown which is ready to use.
   </TabsList>
   <TabsContent value="plaintext">
     ```plaintext
-    <Toggle
-      icon="Info"
+    <Accordion
       title="Plain Text"
-      description="Plain Text on Toggle"
-      content="fill in the content in the form of plain text in the toggle props"
+      description="Plain Text on Accordion"
+      content="fill in the content in the form of plain text in the Accordion props"
       defaultOpen={false}
     />
     ```
   </TabsContent>
   <TabsContent value="html">
     ```html
-    <Toggle
-      icon="List"
+    <Accordion
       title="Feature List"
       description="Explore available features"
       content={
