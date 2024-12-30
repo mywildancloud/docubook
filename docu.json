@@ -7,6 +7,7 @@
       "logoText": "DocuBook",
       "menu": [
         { "title": "Docs", "href": "/docs/getting-started/introduction" },
+        { "title": "Changelog", "href": "/changelog" },
         { "title": "Blog", "href": "/blog" },
         { "title": "Playground", "href": "https://playground-docu.vercel.app/" }
       ]
@@ -67,6 +68,7 @@
             { "title": "Card", "href": "/card" },
             { "title": "Button", "href": "/button" },
             { "title": "Accordion", "href": "/accordion" },
+            { "title": "Release Note", "href": "/release-note" },
             { "title": "Custom", "href": "/custom" }
           ]
         },

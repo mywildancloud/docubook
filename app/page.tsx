@@ -15,8 +15,7 @@ export default function Home() {
   return (
     <div className="flex sm:min-h-[92vh] min-h-[85vh] flex-col items-center justify-center text-center px-2 py-8">
       <Link
-        href="https://github.com/mywildancloud/docubook/releases"
-        target="_blank"
+        href="/changelog"
         className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
       >
         <div className="z-10 flex min-h-10 items-center justify-center max-[800px]:mt-10">
@@ -26,7 +25,7 @@ export default function Home() {
             )}
           >
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-100 hover:duration-300 hover:dark:text-neutral-200">
-              <span>🚀 Introducing DocuBook v.1.2.0</span>
+              <span>🚀 Introducing DocuBook v.1.3.0</span>
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </div>

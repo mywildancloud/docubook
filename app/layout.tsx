@@ -4,10 +4,10 @@ import { Navbar } from "@/components/navbar";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Footer } from "@/components/footer";
-import docuConfig from "@/docu.json"; // Import JSON
+import docuConfig from "@/docu.json";
 import "@/styles/globals.css";
 
-const { meta } = docuConfig; // Extract metadata from JSON
+const { meta } = docuConfig;
 
 // Default Metadata
 const defaultMetadata: Metadata = {
@@ -22,7 +22,7 @@ const defaultMetadata: Metadata = {
     description: meta.description,
     images: [
       {
-        url: `${meta.baseURL}/images/og-image.png`,
+        url: new URL("/images/og-image.png", meta.baseURL).toString(),
         width: 1200,
         height: 630,
         alt: String(meta.title),
@@ -41,27 +41,26 @@ export function getMetadata({
 }: {
   title?: string;
   description?: string;
-  image?: string; // Tambahkan parameter untuk og:image
+  image?: string;
 }): Metadata {
+  const ogImage = image ? new URL(image, meta.baseURL).toString() : undefined;
+  
   return {
     ...defaultMetadata,
     title: title ? `${title}` : defaultMetadata.title,
     description: description || defaultMetadata.description,
     openGraph: {
+      ...defaultMetadata.openGraph,
       title: title || defaultMetadata.openGraph?.title,
       description: description || defaultMetadata.openGraph?.description,
-      images: image
-        ? [
-            {
-              url: image,
-              width: 1200,
-              height: 630,
-              alt: String(title || defaultMetadata.openGraph?.title), // Pastikan hanya string
-            },
-          ]
-        : defaultMetadata.openGraph?.images,
-      locale: defaultMetadata.openGraph?.locale || "en_US",
-      type: "website",
+      images: ogImage ? [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: String(title || defaultMetadata.openGraph?.title),
+        },
+      ] : defaultMetadata.openGraph?.images,
     },
   };
 }
