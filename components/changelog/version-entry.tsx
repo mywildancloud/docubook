@@ -51,7 +51,7 @@ export function VersionEntry({
           )}
 
             {image && (
-            <div className="relative w-full aspect-w-16 aspect-h-9 rounded-lg overflow-hidden border">
+            <div className="relative w-full h-64 rounded-lg overflow-hidden border">
               <Image
               src={image}
               alt={`Version ${version} preview`}
