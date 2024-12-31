@@ -2,6 +2,8 @@
 
 > Release Note Feature to Make it Easier to Write Changelogs
 
+![version 1.3.0 - release note image](https://docubook.pro/images/release-note.png)
+
 ### Added
 
 - New Release Note Feature

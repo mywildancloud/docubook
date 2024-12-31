@@ -59,7 +59,7 @@ export function VersionEntry({
                 className="object-cover"
                 priority
                 quality={90}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
               />
             </div>
           )}

@@ -7,6 +7,7 @@ import { getMetadata } from "@/app/layout";
 export const metadata = getMetadata({
   title: "Changelog",
   description: "Latest updates and improvements to DocuBook",
+  image: "release-notes.png",
 });
 
 export default async function ChangelogPage() {
