@@ -3,13 +3,14 @@ import { getChangelogEntries } from "@/lib/changelog";
 import { VersionEntry } from "@/components/changelog/version-entry";
 import { VersionToc } from "@/components/changelog/version-toc";
 import { getMetadata } from "@/app/layout";
+import docuConfig from "@/docu.json";
 
 export const metadata = getMetadata({
   title: "Changelog",
   description: "Latest updates and improvements to DocuBook",
-  image: "release-notes.png",
+  image: "/release-notes.png",
 });
-
+const { meta } = docuConfig;
 export default async function ChangelogPage() {
   const entries = await getChangelogEntries();
   
@@ -18,9 +19,9 @@ export default async function ChangelogPage() {
       <div className="border-b">
         <div className="py-8">
           <h1 className="text-4xl font-bold">Changelog</h1>
-          <p className="text-lg text-muted-foreground mt-2">
-            Latest updates and improvements to DocuBook
-          </p>
+            <p className="text-lg text-muted-foreground mt-2">
+            Latest updates and improvements to {meta.title}
+           </p>
         </div>
       </div>
 

@@ -9,11 +9,11 @@
 - New Release Note Feature
 - New Layout for Changelog page
 - New Changelog page
-- add Release Note Component
+- Add Release Note Component
 - Easily write release notes directly from the CHANGELOG.md file
-- Toc for versioning
+- TOC for versioning
 - Write with the markdown tag
-- add lib / changelog.ts
+- Add lib / changelog.ts
 
 ### Improved
 
