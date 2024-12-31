@@ -50,19 +50,19 @@ export function VersionEntry({
             <p className="text-dark text-xl">{description}</p>
           )}
 
-          {image && (
-            <div className="relative w-full h-40 sm:h-48 rounded-lg overflow-hidden border">
+            {image && (
+            <div className="relative w-full aspect-w-16 aspect-h-9 rounded-lg overflow-hidden border">
               <Image
-                src={image}
-                alt={`Version ${version} preview`}
-                fill
-                className="object-cover"
-                priority
-                quality={90}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
+              src={image}
+              alt={`Version ${version} preview`}
+              fill
+              className="object-cover"
+              priority
+              quality={90}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
               />
             </div>
-          )}
+            )}
         </div>
 
         {/* Changes */}
