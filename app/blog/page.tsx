@@ -4,12 +4,13 @@ import { formatDate2, stringToDate } from "@/lib/utils";
 import { getMetadata } from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
+import docuConfig from "@/docu.json";
 
 export const metadata = getMetadata({
   title: "Blog",
   description: "Discover the latest updates, tutorials, and insights on DocuBook.",
 });
-
+const { meta } = docuConfig;
 export default async function BlogIndexPage() {
   const blogs = (await getAllBlogs()).sort(
     (a, b) => stringToDate(b.date).getTime() - stringToDate(a.date).getTime()
@@ -21,7 +22,7 @@ export default async function BlogIndexPage() {
           Latest Blog Posts
         </h1>
         <p className="text-muted-foreground">
-          Discover the latest updates, tutorials, and insights on DocuBook.
+          Discover the latest updates, tutorials, and insights on {meta.title}.
         </p>
       </div>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-4 mb-5">

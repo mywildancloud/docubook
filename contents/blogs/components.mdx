@@ -1,0 +1,137 @@
+---
+title: "Getting Started with DocuBook Components"
+description: "Learn how to leverage the power of DocuBook components to create dynamic and interactive documentation. This guide explores the key components available and how to integrate them into your documentation workflow."
+date: 31-12-2024
+authors:
+  - avatar: "https://ui.shadcn.com/avatars/02.png"
+    handle: mywildancloud
+    username: Wildan nrs
+    handleUrl: "https://github.com/mywildancloud"
+cover: "https://img.freepik.com/free-vector/spring-landscape-scene_23-2148860692.jpg?t=st=1735654206~exp=1735657806~hmac=b65033387b5519b48c72a87333cf1a5d2462de255865104c612500161b248a8a&w=2000"
+---
+
+## Introduction to DocuBook Components
+
+DocuBook provides a robust set of components that enable developers to build dynamic, user-friendly, and visually appealing documentation. These components are designed to enhance the user experience, making it easier for readers to navigate, understand, and interact with the content.
+
+In this guide, we’ll explore the core components available in DocuBook and how you can integrate them into your documentation projects. For a complete list of components, visit the [official documentation](https://www.docubook.pro/docs/getting-started/components).
+
+## Key Components and Their Usage
+
+### 1. **Accordion**
+
+The Accordion component is perfect for organizing content into collapsible sections. This is particularly useful for FAQs, detailed guides, or step-by-step tutorials.
+
+#### Example:
+
+```mdx
+<Accordion>
+  <AccordionItem title="What is DocuBook?">
+    DocuBook is a modern platform for creating interactive and dynamic
+    documentation.
+  </AccordionItem>
+  <AccordionItem title="How do I get started?">
+    Visit the [Getting Started
+    Guide](https://www.docubook.pro/docs/getting-started) to learn more.
+  </AccordionItem>
+</Accordion>
+```
+
+### 2. **Tabs**
+
+Tabs allow you to display different pieces of information in a compact space, making it easier for users to switch between related content.
+
+#### Example:
+
+```mdx
+<Tabs>
+  <Tab title="Overview">
+    DocuBook simplifies documentation creation with interactive components.
+  </Tab>
+  <Tab title="Features">
+    - Interactive elements - Customizable themes - Markdown and MDX support
+  </Tab>
+</Tabs>
+```
+
+### 3. **Callout**
+
+Highlight important information or tips using the Callout component. It’s an effective way to draw attention to key details.
+
+#### Example:
+
+```mdx
+<Callout type="info">
+  Remember to save your changes frequently to avoid losing progress.
+</Callout>
+```
+
+### 4. **Code Block with Syntax Highlighting**
+
+DocuBook supports code blocks with syntax highlighting, making it easier to showcase code snippets in various programming languages.
+
+#### Example:
+
+````mdx
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+console.log(greet("DocuBook"));
+```
+````
+
+````
+
+### 5. **Table**
+
+Tables are a great way to present structured data in an organized format.
+
+#### Example:
+```mdx
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableCell>Feature</TableCell>
+      <TableCell>Description</TableCell>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Interactive Components</TableCell>
+      <TableCell>Enhance user engagement with dynamic elements.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Custom Themes</TableCell>
+      <TableCell>Align documentation design with your brand.</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+````
+
+### 6. **Alert**
+
+Use the Alert component to notify users about warnings, errors, or important updates.
+
+#### Example:
+
+```mdx
+<Alert type="warning">
+  This feature is currently in beta. Use with caution.
+</Alert>
+```
+
+## How to Integrate Components into Your Workflow
+
+1. **Install DocuBook**: Ensure you have DocuBook set up in your project. Refer to the [installation guide](https://www.docubook.pro/docs/getting-started).
+2. **Import Components**: Import the required components into your MDX files.
+3. **Customize**: Tailor the components to fit your documentation needs using props and styles.
+4. **Test and Deploy**: Preview your documentation locally and deploy it to your preferred hosting platform.
+
+## Conclusion
+
+DocuBook components are powerful tools for creating engaging and functional documentation. By incorporating these components, you can provide a seamless and intuitive experience for your users.
+
+Ready to get started? Explore the full range of components in the [DocuBook documentation](https://www.docubook.pro/docs/getting-started/components) and elevate your documentation today!
+
+🚀📚
