@@ -24,7 +24,7 @@ export default async function ChangelogPage() {
         </div>
       </div>
 
-      <div className="container py-8">
+      <div className="md:container py-8">
         <div className="flex items-start gap-8">
           <Suspense fallback={<div className="lg:flex hidden flex-[1.5] min-w-[238px]" />}>
             <VersionToc 
@@ -34,8 +34,8 @@ export default async function ChangelogPage() {
           
           <main className="flex-1 lg:flex-[5.25] min-w-0">
             <div className="relative">
-              <div className="absolute left-0 top-0 h-full w-px bg-border md:block hidden" />
-              <div className="sm:pl-12 pl-0 pt-8">
+              <div className="absolute left-0 top-0 h-full w-px bg-border lg:block hidden" />
+              <div className="lg:pl-12 pl-0 pt-8">
                 {entries.map((entry, index) => (
                   <VersionEntry
                     key={entry.version}

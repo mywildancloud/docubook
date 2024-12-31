@@ -51,7 +51,7 @@ export function VersionEntry({
           )}
 
             {image && (
-            <div className="relative w-full h-64 rounded-lg overflow-hidden border">
+            <div className="relative w-full h-0 pb-[56.25%] rounded-lg overflow-hidden border">
               <Image
               src={image}
               alt={`Version ${version} preview`}
@@ -59,7 +59,7 @@ export function VersionEntry({
               className="object-cover"
               priority
               quality={90}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
             )}

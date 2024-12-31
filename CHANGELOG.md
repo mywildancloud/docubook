@@ -15,6 +15,17 @@
 - Write with the markdown tag
 - add lib / changelog.ts
 
+### Improved
+
+- Improvement Responsive feature image for Version Entry
+- Improvement Layout for changelog page
+- Improvement Padding on mobile devices
+
+### Removed
+
+- Remove excessive padding
+- Only use containers of md size
+
 ## [1.2.0] - 2024-12-22
 
 > New Accordion Component : Support content plain text, html and all markdown component
