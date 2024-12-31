@@ -5,13 +5,14 @@ import { VersionToc } from "@/components/changelog/version-toc";
 import { getMetadata } from "@/app/layout";
 import docuConfig from "@/docu.json";
 
+const { meta } = docuConfig;
+
 export const metadata = getMetadata({
   title: "Changelog",
   description: "Latest updates and improvements to DocuBook",
   image: "release-notes.png",
 });
 
-const { meta } = docuConfig;
 export default async function ChangelogPage() {
   const entries = await getChangelogEntries();
   
