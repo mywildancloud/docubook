@@ -21,10 +21,15 @@
 - Improvement Layout for changelog page
 - Improvement Padding on mobile devices
 
+### Fixed
+
+- Fix og:image not showing on Page.tsx
+
 ### Removed
 
 - Remove excessive padding
 - Only use containers of md size
+- Remove Logo on Footer
 
 ## [1.2.0] - 2024-12-22
 
