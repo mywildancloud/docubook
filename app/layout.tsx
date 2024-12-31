@@ -44,7 +44,7 @@ export function getMetadata({
   image?: string;
 }): Metadata {
   const ogImage = image ? new URL(`/images/${image}`, meta.baseURL).toString() : undefined;
-  console.log("OG Image URL:", ogImage); // Debugging URL
+  
   return {
     ...defaultMetadata,
     title: title ? `${title}` : defaultMetadata.title,

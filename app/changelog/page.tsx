@@ -5,17 +5,15 @@ import { VersionToc } from "@/components/changelog/version-toc";
 import { getMetadata } from "@/app/layout";
 import docuConfig from "@/docu.json";
 
-const { meta } = docuConfig;
-
 export const metadata = getMetadata({
   title: "Changelog",
   description: "Latest updates and improvements to DocuBook",
-  image: "release-notes.png",
+  image: "release-note.png",
 });
 
 export default async function ChangelogPage() {
   const entries = await getChangelogEntries();
-  
+  const { meta } = docuConfig;
   return (
     <div className="flex flex-col w-full">
       <div className="border-b">
