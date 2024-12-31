@@ -8,7 +8,7 @@ import docuConfig from "@/docu.json";
 export const metadata = getMetadata({
   title: "Changelog",
   description: "Latest updates and improvements to DocuBook",
-  image: "/release-notes.png",
+  image: "release-notes.png",
 });
 
 const { meta } = docuConfig;
