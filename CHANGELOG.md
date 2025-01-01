@@ -20,6 +20,7 @@
 - Improvement Responsive feature image for Version Entry
 - Improvement Layout for changelog page
 - Improvement Padding on mobile devices
+- Only use containers of md size
 
 ### Fixed
 
@@ -28,7 +29,6 @@
 ### Removed
 
 - Remove excessive padding
-- Only use containers of md size
 - Remove Logo on Footer
 
 ## [1.2.0] - 2024-12-22

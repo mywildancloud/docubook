@@ -18,108 +18,104 @@ In this guide, we’ll explore the core components available in DocuBook and how
 
 ## Key Components and Their Usage
 
-### 1. **Accordion**
+### 1. **Stepper**
 
-The Accordion component is perfect for organizing content into collapsible sections. This is particularly useful for FAQs, detailed guides, or step-by-step tutorials.
+#### Preview
 
-#### Example:
+<Stepper>
+  <StepperItem title="Step 1: Clone the DocuBook Repository">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum,
+    felis sed efficitur tincidunt, justo nulla viverra enim, et maximus nunc
+    dolor in lorem.
+  </StepperItem>
+  <StepperItem title="Step 2: Access the Project Directory">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non neque ut
+    eros auctor accumsan. Mauris a nisl vitae magna ultricies aliquam.
+  </StepperItem>
+  <StepperItem title="Step 3: Install Required Dependencies">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut
+    ipsum nec nulla ultricies porttitor et non justo.
+  </StepperItem>
+</Stepper>
 
-```mdx
-<Accordion>
-  <AccordionItem title="What is DocuBook?">
-    DocuBook is a modern platform for creating interactive and dynamic
-    documentation.
-  </AccordionItem>
-  <AccordionItem title="How do I get started?">
-    Visit the [Getting Started
-    Guide](https://www.docubook.pro/docs/getting-started) to learn more.
-  </AccordionItem>
-</Accordion>
+#### Code
+
+```
+<Stepper>
+  <StepperItem title="Step 1: Clone the DocuBook Repository">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum,
+    felis sed efficitur tincidunt, justo nulla viverra enim, et maximus nunc
+    dolor in lorem.
+  </StepperItem>
+  <StepperItem title="Step 2: Access the Project Directory">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non neque ut
+    eros auctor accumsan. Mauris a nisl vitae magna ultricies aliquam.
+  </StepperItem>
+  <StepperItem title="Step 3: Install Required Dependencies">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut
+    ipsum nec nulla ultricies porttitor et non justo.
+  </StepperItem>
+</Stepper>
 ```
 
-### 2. **Tabs**
+### 2. **Note**
 
-Tabs allow you to display different pieces of information in a compact space, making it easier for users to switch between related content.
+#### Preview
 
-#### Example:
+<Note type="note" title="Note">
+  This is a general note to convey information to the user.
+</Note>
+<Note type="danger" title="Danger">
+  This is a danger alert to notify the user of a critical issue.
+</Note>
+<Note type="warning" title="Warning">
+  This is a warning alert for issues that require attention.
+</Note>
+<Note type="success" title="Success">
+  This is a success message to inform the user of successful actions.
+</Note>
 
-```mdx
-<Tabs>
-  <Tab title="Overview">
-    DocuBook simplifies documentation creation with interactive components.
-  </Tab>
-  <Tab title="Features">
-    - Interactive elements - Customizable themes - Markdown and MDX support
-  </Tab>
-</Tabs>
+#### Code
+
+```
+<Note type="note" title="Note">
+  This is a general note to convey information to the user.
+</Note>
+<Note type="danger" title="Danger">
+  This is a danger alert to notify the user of a critical issue.
+</Note>
+<Note type="warning" title="Warning">
+  This is a warning alert for issues that require attention.
+</Note>
+<Note type="success" title="Success">
+  This is a success message to inform the user of successful actions.
+</Note>
 ```
 
-### 3. **Callout**
+### 3. **Code Block**
 
-Highlight important information or tips using the Callout component. It’s an effective way to draw attention to key details.
+#### Preview
 
-#### Example:
-
-```mdx
-<Callout type="info">
-  Remember to save your changes frequently to avoid losing progress.
-</Callout>
-```
-
-### 4. **Code Block with Syntax Highlighting**
-
-DocuBook supports code blocks with syntax highlighting, making it easier to showcase code snippets in various programming languages.
-
-#### Example:
-
-````mdx
-```javascript
-function greet(name) {
-  return `Hello, ${name}!`;
+```javascript:main.js showLineNumbers {3-4}
+function isRocketAboutToCrash() {
+    // Check if the rocket is stable
+    if (!isStable()) {
+        NoCrash(); // Prevent the crash
+    }
 }
-console.log(greet("DocuBook"));
 ```
+
+#### Code
+
+````plaintext
+```javascript:main.js showLineNumbers {3-4}
+function isRocketAboutToCrash() {
+    // Check if the rocket is stable
+    if (!isStable()) {
+        NoCrash(); // Prevent the crash
+    }
+}```
 ````
-
-````
-
-### 5. **Table**
-
-Tables are a great way to present structured data in an organized format.
-
-#### Example:
-```mdx
-<Table>
-  <TableHeader>
-    <TableRow>
-      <TableCell>Feature</TableCell>
-      <TableCell>Description</TableCell>
-    </TableRow>
-  </TableHeader>
-  <TableBody>
-    <TableRow>
-      <TableCell>Interactive Components</TableCell>
-      <TableCell>Enhance user engagement with dynamic elements.</TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>Custom Themes</TableCell>
-      <TableCell>Align documentation design with your brand.</TableCell>
-    </TableRow>
-  </TableBody>
-</Table>
-````
-
-### 6. **Alert**
-
-Use the Alert component to notify users about warnings, errors, or important updates.
-
-#### Example:
-
-```mdx
-<Alert type="warning">
-  This feature is currently in beta. Use with caution.
-</Alert>
-```
 
 ## How to Integrate Components into Your Workflow
 
