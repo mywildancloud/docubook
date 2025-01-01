@@ -28,14 +28,14 @@ export function ChangeGroup({ type, changes, expanded }: ChangeGroupProps) {
       <Badge variant="outline" className={cn("font-medium", typeColors[type])}>
         {type}
       </Badge>
-      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+      <ul className="list-disc list-inside space-y-2 text-muted-foreground pl-2">
         {visibleChanges.map((change, i) => (
-          <li key={i} className="text-sm leading-relaxed marker:text-muted-foreground/60">
+          <li key={i} id="changelog" className="text-sm leading-relaxed marker:text-muted-foreground/60">
             {change}
           </li>
         ))}
         {!expanded && hasMore && (
-          <li className="text-sm text-muted-foreground/60">
+          <li id="changelog-more" className="text-sm text-muted-foreground/60">
             +{changes.length - 5} more improvements
           </li>
         )}
