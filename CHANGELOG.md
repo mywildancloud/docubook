@@ -21,10 +21,12 @@
 - Improvement Layout for changelog page
 - Improvement Padding on mobile devices
 - Only use containers of md size
+- Improvement syntax.css for ul>li classes
 
 ### Fixed
 
 - Fix og:image not showing on Page.tsx
+- Fix text-indent on class li
 
 ### Removed
 

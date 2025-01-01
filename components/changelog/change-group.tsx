@@ -30,7 +30,7 @@ export function ChangeGroup({ type, changes, expanded }: ChangeGroupProps) {
       </Badge>
       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
         {visibleChanges.map((change, i) => (
-          <li key={i} className="text-sm">
+          <li key={i} className="text-sm leading-relaxed marker:text-muted-foreground/60">
             {change}
           </li>
         ))}
