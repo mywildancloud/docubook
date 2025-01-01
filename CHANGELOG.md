@@ -75,12 +75,16 @@
 - Playground (easily to written content)
 - New Button component
 - Navbar external link conditions
+- CLI npx create_docu
 
 ### Improved
 
 - Searchbar Improvement
 - Navigation Improvement
 - Edit on Github Improvement
+
+### Removed
+- Remove CLI npx create-docu (on this version not usage dash `-`)
 
 ## [1.0.6] - 2024-11-24
 
