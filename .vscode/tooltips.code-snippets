@@ -1,0 +1,16 @@
+{
+    "DocuTooltips": {
+      "prefix": "tooltips",
+      "body": [
+        "<div className=\"w-full\">",
+        "   <Tooltip tip=\"${1:this is tooltips! DocuBook on version 1.0.5}\">",
+        "       <span style={{ textDecoration: \"underline dotted\", cursor: \"pointer\" }}>",
+        "           ${2:Hover over me}",
+        "       </span>",
+        "   </Tooltip>",
+        "   <span> ${3:and this is some regular text.}</span>",
+        "</div>"
+      ],
+      "description": "Create a DocuTooltips component with version examples."
+    }
+  }

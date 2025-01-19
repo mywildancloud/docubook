@@ -1,0 +1,26 @@
+{
+    "DocuCards": {
+      "prefix": "card",
+      "body": [
+        "<div className=\"grid grid-cols-1 sm:grid-cols-2 gap-4\">",
+            "<Card>",
+            "    <Card.Title title=\"${1:Heading}\" icon=\"${2:Heading}\" />",
+            "       <Card.Description description=\"${3:Your description card here! change this text}\" />",
+            "</Card>",
+            "<Card>",
+            "    <Card.Title title=\"Link\" icon=\"Link\" />",
+            "       <Card.Description description=\"Your description card here! change this text\" />",
+            "</Card>",
+            "<Card>",
+            "    <Card.Title title=\"Images\" icon=\"Images\" />",
+            "        <Card.Description description=\"Your description card here! change this text\" />",
+            "</Card>",
+            "<Card>",
+            "    <Card.Title title=\"Code Block\" icon=\"Code\" />",
+            "        <Card.Description description=\"Your description card here! change this text\" />",
+            "</Card>",
+        "</div>"
+      ],
+      "description": "Create a DocuCards component on markdown."
+    }
+  }

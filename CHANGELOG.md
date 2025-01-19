@@ -1,3 +1,13 @@
+## [1.3.1] - 2025-01-20
+
+> Snippet Feature to Easily Write Markdown and Call DocuBook Components
+
+![version 1.3.1 - Snippet Features](https://docubook.pro/images/snippet.png)
+
+### Added
+
+- New Feature Snippet for Markdown Components
+
 ## [1.3.0] - 2024-12-31
 
 > Release Note Feature to Make it Easier to Write Changelogs
