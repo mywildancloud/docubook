@@ -3,9 +3,9 @@
         "prefix": "metadata",
         "body": [
             "---",
-            "title :${1: judul post}",
-            "description :${2: deskripsi singkat dari post}",
-            "date : ${3: 10-12-2024}",
+            "title : ${1:judul post}",
+            "description : ${2:deskripsi singkat dari post}",
+            "date : ${3:10-12-2024}",
             "---"
         ],
         "description": "Snippet untuk membuat metadata."
