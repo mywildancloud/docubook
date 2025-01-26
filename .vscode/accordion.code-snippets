@@ -4,9 +4,7 @@
       "body": [
         "<Accordion",
         "    title=\"${1:Plain Text}\"",
-        "    description=\"${2:Plain Text on Accordion}\"",
-        "    content=\"${3:fill in the content in the form of plain text in the Accordion props}\"",
-        "    defaultOpen={false}",
+        "    content=\"${2:fill in the content in the form of plain text in the Accordion props}\"",
         "/>"
       ],
       "description": "Create a DocuAccordion component on markdown."
