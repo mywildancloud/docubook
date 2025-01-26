@@ -1,44 +1,33 @@
 "use client";
 
 import { useState } from 'react';
-import * as Icons from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-type IconName = keyof typeof Icons;
-
 type AccordionProps = {
-    icon?: IconName;
     title: string;
-    description?: string;
     content?: React.ReactNode;
     defaultOpen?: boolean;
     className?: string;
-}
+};
 
 const Accordion = ({
-    icon,
     title,
-    description,
     content,
     defaultOpen = false,
     className,
 }: AccordionProps) => {
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
-    const Icon = (icon ? Icons[icon] : Icons.ChevronRight) as React.ElementType;
-
     return (
-        <div className={cn("border rounded-lg overflow-hidden mb-4", className)}>
+        <div className={cn("border rounded-lg overflow-hidden", className)}>
             <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full px-4 py-0 flex items-center justify-between bg-background hover:bg-muted/50 transition-colors"
+                className="flex items-center justify-between w-full px-4 transition-colors bg-background hover:bg-muted/50"
             >
-                <div className="flex flex-col">
-                    <h3 className="font-medium text-foreground text-left">{title}</h3>
-                    {description && <p className="text-sm text-muted-foreground">{description}</p>}
-                </div>
-                <Icon
+                <h3 className="font-medium text-left text-foreground">{title}</h3>
+                <ChevronRight
                     className={cn(
                         "w-5 h-5 text-muted-foreground transition-transform duration-200",
                         isOpen && "rotate-90"
@@ -47,7 +36,7 @@ const Accordion = ({
             </button>
 
             {isOpen && (
-                <div className="px-4 py-3 bg-muted/50 border-t">
+                <div className="px-4 py-3 border-t bg-muted/50">
                     {content}
                 </div>
             )}

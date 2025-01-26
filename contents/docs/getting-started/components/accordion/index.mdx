@@ -12,7 +12,6 @@ I have implemented the `accordion` component into markdown which is ready to use
 
 <Accordion
   title="Feature List"
-  description="Explore available features"
   content={
     <div className="space-y-2">
       <h4 className="font-medium">Key Features:</h4>
@@ -31,7 +30,6 @@ I have implemented the `accordion` component into markdown which is ready to use
 
 <Accordion
   title="Plain Text"
-  description="Plain Text on Accordion"
   content="fill in the content in the form of plain text in the Accordion props"
   defaultOpen={false}
 />
@@ -40,9 +38,7 @@ I have implemented the `accordion` component into markdown which is ready to use
 
 | Prop          | Type      | Default        | Description                                                                            |
 | ------------- | --------- | -------------- | -------------------------------------------------------------------------------------- |
-| `icon`        | `string`  | `ChevronRight` | The value of Accordion icon render from lucide.                                        |
 | `title`       | `string`  | `null`         | The value of Accordion title.                                                          |
-| `description` | `string`  | `null`         | The value of Accordion description.                                                    |
 | `content`     | `string`  | `null`         | Flexible content, both HTML elements and plain text.                                   |
 | `defaultOpen` | `boolean` | `false`        | You can change the value to `true` if you want the content to open when the page loads |
 
@@ -57,7 +53,6 @@ I have implemented the `accordion` component into markdown which is ready to use
     ```plaintext
     <Accordion
       title="Plain Text"
-      description="Plain Text on Accordion"
       content="fill in the content in the form of plain text in the Accordion props"
       defaultOpen={false}
     />
@@ -67,7 +62,6 @@ I have implemented the `accordion` component into markdown which is ready to use
     ```html
     <Accordion
       title="Feature List"
-      description="Explore available features"
       content={
         <div className="space-y-2">
           <h4 className="font-medium">Key Features:</h4>

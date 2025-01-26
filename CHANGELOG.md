@@ -8,6 +8,10 @@
 
 - New Feature Snippet for Markdown Components
 
+### Removed
+
+- remove props icon and props description for accordion components
+
 ## [1.3.0] - 2024-12-31
 
 > Release Note Feature to Make it Easier to Write Changelogs
