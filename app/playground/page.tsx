@@ -324,7 +324,7 @@ export default function PlaygroundPage() {
       isFullscreen ? "fixed inset-0 z-50 bg-background" : "min-h-[calc(100vh-4rem)]"
     )}>
       <div className="border-b bg-background sticky top-0 z-20">
-        <div className="py-8 flex items-center justify-between">
+        <div className="py-8 px-2 flex items-center justify-between">
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl font-extrabold">Docu<span className="text-primary text-lg ml-1">PLAY</span></h1>
             <p className="text-lg text-muted-foreground mt-2">
@@ -377,7 +377,7 @@ export default function PlaygroundPage() {
         </div>
       </div>
 
-      <div className="flex-1 py-6">
+      <div className="flex-1 py-8 px-2">
         <div className="flex flex-col h-full pb-12">
           <div className="mb-4">
             <div className="flex items-center border rounded-md p-1 mb-2 bg-background">
