@@ -1,13 +1,4 @@
 "use client";
-
-import { Typography } from "@/components/typography";
-import Note from "@/components/markdown/note";
-import { Stepper, StepperItem } from "@/components/markdown/stepper";
-import Accordion from "@/components/markdown/accordion";
-import Card from "@/components/markdown/card";
-import Button from "@/components/markdown/button";
-import Youtube from "@/components/markdown/youtube";
-import Tooltip from "@/components/markdown/tooltips";
 import { useState, useEffect } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
@@ -48,6 +39,13 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import { getMetadata } from "@/app/layout";
+
+export const metadata = getMetadata({
+  title: "Playground",
+  description: "Test and experiment with DocuBook markdown components in real-time",
+  image: "img-playground.png",
+});
 
 const ToolbarButton = ({ icon: Icon, label, onClick }: { icon: any, label: string, onClick?: () => void }) => (
   <UIButton
