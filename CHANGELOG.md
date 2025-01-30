@@ -2,7 +2,8 @@
 
 > it's Easy to Write Markdown with Playground
 
-![version 1.3.5 - Playground](https://docubook.pro/images/play.png)
+![version 1.3.5 - 
+Playground](https://docubook.pro/images/img-playground.png)
 
 ### Added
 
