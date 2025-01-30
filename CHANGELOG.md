@@ -1,3 +1,20 @@
+## [1.3.5] - 2025-01-30
+
+> it's Easy to Write Markdown with Playground
+
+![version 1.3.5 - Playground](https://docubook.pro/images/playground.png)
+
+### Added
+
+- New Playground Page
+- New Playground Layout
+- Toolbar for Markdown Components
+- Fullscreen Mode to Focus Editing Your Content
+- Copy to Clipboard Your Content
+- Download Your Content as index.mdx
+- Reset Your Content without refresh the Browser
+- Only Large Screen for Better Experience
+
 ## [1.3.1] - 2025-01-20
 
 > Snippet Feature to Easily Write Markdown and Call DocuBook Components
@@ -7,6 +24,7 @@
 ### Added
 
 - New Feature Snippet for Markdown Components
+- Support Snippet for Visual Studio Code
 
 ### Removed
 

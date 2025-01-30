@@ -18,10 +18,10 @@ export default async function BlogIndexPage() {
   return (
     <div className="w-full mx-auto flex flex-col gap-1 sm:min-h-[91vh] min-h-[88vh] pt-2">
       <div className="mb-7 flex flex-col gap-2">
-        <h1 className="text-3xl font-extrabold">
-          Latest Blog Posts
+        <h1 className="text-2xl font-extrabold">
+          Blog Posts
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-lg text-muted-foreground mt-2">
           Discover the latest updates, tutorials, and insights on {meta.title}.
         </p>
       </div>

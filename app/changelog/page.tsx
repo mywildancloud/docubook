@@ -18,7 +18,7 @@ export default async function ChangelogPage() {
     <div className="flex flex-col w-full">
       <div className="border-b">
         <div className="py-8">
-          <h1 className="text-4xl font-bold">Changelog</h1>
+          <h1 className="text-2xl font-extrabold">Changelog</h1>
             <p className="text-lg text-muted-foreground mt-2">
             Latest updates and improvements to {meta.title}
            </p>
@@ -28,11 +28,11 @@ export default async function ChangelogPage() {
       <div className="md:container py-8">
         <div className="flex items-start gap-8">
           <Suspense fallback={<div className="lg:flex hidden flex-[1.5] min-w-[238px]" />}>
-            <VersionToc 
-              versions={entries.map(({ version, date }) => ({ version, date }))} 
+            <VersionToc
+              versions={entries.map(({ version, date }) => ({ version, date }))}
             />
           </Suspense>
-          
+
           <main className="flex-1 lg:flex-[5.25] min-w-0">
             <div className="relative">
               <div className="absolute left-0 top-0 h-full w-px bg-border lg:block hidden" />
