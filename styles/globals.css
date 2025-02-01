@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url("../styles/syntax.css");
+@import url("../styles/editor.css");
 
 /* ocean */
 @layer base {
@@ -32,6 +33,7 @@
         --chart-3: 220 75% 45%; /* Azure blue */
         --chart-4: 200 65% 50%; /* Ocean blue */
         --chart-5: 240 35% 35%; /* Deeper teal */
+        --line-number-color: rgba(0, 0, 0, 0.05);
     }
 
     .dark {
@@ -59,9 +61,9 @@
         --chart-3: 220 75% 45%; /* Azure blue */
         --chart-4: 200 65% 50%; /* Ocean blue */
         --chart-5: 240 35% 35%; /* Deeper teal */
+        --line-number-color: rgba(255, 255, 255, 0.05);
     }
 }
-
 
 @layer base {
   * {
@@ -108,7 +110,6 @@ pre>code {
 .highlight-line {
   @apply bg-primary/5 border-l-2 border-primary/30;
 }
-
 
 .rehype-code-title {
   @apply px-2 -mb-8 w-full text-sm pb-5 font-medium mt-5 font-code;

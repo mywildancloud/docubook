@@ -1,3 +1,20 @@
+## [1.3.6] - 2025-02-01
+
+> Appears more modern editor for Docu Play
+
+![version 1.3.6 - Playground](https://docubook.pro/images/v-1.3.6.png)
+
+### Added
+
+- Line Number for editor
+- editor.css
+
+### Improved
+
+- Better Design for Editor
+- Similar to Github Editor
+- Moved Handler Element (copy, download, reset and fullscreen) on Header
+
 ## [1.3.5] - 2025-01-30
 
 > it's Easy to Write Markdown with Playground

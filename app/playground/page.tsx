@@ -1,13 +1,7 @@
 "use client";
-// import { Typography } from "@/components/typography";
-// import Note from "@/components/markdown/note";
-// import { Stepper, StepperItem } from "@/components/markdown/stepper";
-// import Accordion from "@/components/markdown/accordion";
-// import Card from "@/components/markdown/card";
-// import Button from "@/components/markdown/button";
-// import Youtube from "@/components/markdown/youtube";
-// import Tooltip from "@/components/markdown/tooltips";
-import { useState, useEffect } from "react";
+
+import { Typography } from "@/components/typography";
+import { useState, useEffect, useRef } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
@@ -47,6 +41,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import "@/styles/editor.css";
 
 const ToolbarButton = ({ icon: Icon, label, onClick }: { icon: any, label: string, onClick?: () => void }) => (
   <UIButton
@@ -78,6 +73,9 @@ export default function PlaygroundPage() {
   const [markdown, setMarkdown] = useState("");
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [lineCount, setLineCount] = useState(1);
+  const editorRef = useRef<HTMLTextAreaElement>(null);
+  const lineNumbersRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -90,6 +88,27 @@ export default function PlaygroundPage() {
     return () => {
       window.removeEventListener('resize', checkMobile);
     };
+  }, []);
+
+  useEffect(() => {
+    // Update line count when markdown content changes
+    const lines = markdown.split('\n').length;
+    setLineCount(Math.max(lines, 1));
+  }, [markdown]);
+
+  // Sync scroll position between editor and line numbers
+  useEffect(() => {
+    const textarea = editorRef.current;
+    const lineNumbers = lineNumbersRef.current;
+
+    if (!textarea || !lineNumbers) return;
+
+    const handleScroll = () => {
+      lineNumbers.scrollTop = textarea.scrollTop;
+    };
+
+    textarea.addEventListener('scroll', handleScroll);
+    return () => textarea.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleFullscreen = () => {
@@ -134,7 +153,7 @@ export default function PlaygroundPage() {
               variant="destructive"
               onClick={() => {
                 setMarkdown('');
-                toast.success('Editor content cleared');
+                toast.success('all content in the editor has been cleaned');
                 toast.dismiss(t);
               }}
             >
@@ -164,7 +183,6 @@ export default function PlaygroundPage() {
     const newText = before + text + after;
     setMarkdown(newText);
 
-    // Use requestAnimationFrame to ensure the DOM has updated
     requestAnimationFrame(() => {
       textArea.focus();
       const newPosition = start + text.length;
@@ -322,154 +340,176 @@ export default function PlaygroundPage() {
       "flex flex-col transition-all duration-200",
       isFullscreen ? "fixed inset-0 z-50 bg-background" : "min-h-[calc(100vh-4rem)]"
     )}>
-      <div className="border-b bg-background sticky top-0 z-20">
-        <div className="py-8 px-2 flex items-center justify-between">
+      <div className="border-b bg-background">
+        <div className="py-8 px-2">
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl font-extrabold">Docu<span className="text-primary text-lg ml-1">PLAY</span></h1>
             <p className="text-lg text-muted-foreground mt-2">
               Test and experiment with DocuBook markdown components in real-time
             </p>
           </div>
-          <div className="flex items-center gap-2">
-            {markdown.trim() && (
-              <>
-                <UIButton
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleCopy}
-                  className="gap-2"
-                >
-                  <Copy className="h-4 w-4" />
-                </UIButton>
-                <UIButton
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleDownload}
-                  className="gap-2"
-                >
-                  <Download className="h-4 w-4" />
-                </UIButton>
-                <UIButton
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleReset}
-                  className="gap-2"
-                >
-                  <RotateCcw className="h-4 w-4" />
-                </UIButton>
-                <Separator orientation="vertical" className="h-6" />
-              </>
-            )}
-            <UIButton
-              variant="ghost"
-              size="sm"
-              onClick={toggleFullscreen}
-              className="gap-2"
-            >
-              {isFullscreen ? (
-                <Minimize2 className="h-4 w-4" />
-              ) : (
-                <Maximize2 className="h-4 w-4" />
-              )}
-            </UIButton>
-          </div>
         </div>
       </div>
 
       <div className="flex-1 py-8 px-2">
         <div className="flex flex-col h-full pb-12">
-          <div className="mb-4">
-            <div className="flex items-center border rounded-md p-1 mb-2 bg-background">
-              <ToolbarButton icon={Type} label="Paragraph" onClick={handleParagraphClick} />
-              <ToolbarButton icon={Heading2} label="Heading 2" onClick={handleHeading2Click} />
-              <ToolbarButton icon={Heading3} label="Heading 3" onClick={handleHeading3Click} />
-              <ToolbarButton icon={List} label="Bullet List" onClick={handleBulletListClick} />
-              <ToolbarButton icon={ListOrdered} label="Numbered List" onClick={handleNumberedListClick} />
-              <ToolbarSeparator />
-              <ToolbarButton icon={Code} label="Code Block" onClick={handleCodeBlockClick} />
-              <ToolbarButton icon={Quote} label="Blockquote" onClick={handleBlockquoteClick} />
-              <ToolbarButton icon={ImageIcon} label="Image" onClick={handleImageClick} />
-              <ToolbarButton icon={LinkIcon} label="Link" onClick={handleLinkClick} />
-              <ToolbarButton icon={Table} label="Table" onClick={handleTableClick} />
-              <ToolbarSeparator />
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <UIButton
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 px-2 flex items-center gap-1 font-normal"
-                  >
-                    <Notebook className="h-4 w-4 text-muted-foreground" />
-                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
-                  </UIButton>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
-                  <DropdownMenuItem onClick={() => handleNoteClick('note')}>
-                    Note
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleNoteClick('danger')}>
-                    Danger
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleNoteClick('warning')}>
-                    Warning
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleNoteClick('success')}>
-                    Success
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              <ToolbarSeparator />
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <UIButton
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 px-2 flex items-center gap-1 font-normal"
-                  >
-                    <Component className="h-4 w-4 text-muted-foreground" />
-                    <ChevronDown className="h-4 w-4 text-muted-foreground" />
-                  </UIButton>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
-                  <DropdownMenuItem onClick={() => handleComponentClick('stepper')}>
-                    <Rows className="h-4 w-4 mr-2" />
-                    Stepper
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleComponentClick('card')}>
-                    <LayoutGrid className="h-4 w-4 mr-2" />
-                    Card
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleComponentClick('button')}>
-                    <MousePointer2 className="h-4 w-4 mr-2" />
-                    Button
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleComponentClick('accordion')}>
-                    <ChevronDown className="h-4 w-4 mr-2" />
-                    Accordion
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleComponentClick('tabs')}>
-                    <LayoutPanelTop className="h-4 w-4 mr-2" />
-                    Tabs
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleComponentClick('youtube')}>
-                    <YoutubeIcon className="h-4 w-4 mr-2" />
-                    Youtube
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleComponentClick('tooltip')}>
-                    <HelpCircle className="h-4 w-4 mr-2" />
-                    Tooltip
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+          <ScrollArea className="flex-1 border rounded-lg">
+            <div className="sticky top-0 z-20 bg-background border-b">
+              <div className="flex items-center justify-between p-2 bg-muted/40">
+                <div className="flex items-center gap-2">
+                  {markdown.trim() && (
+                    <>
+                      <UIButton
+                        variant="ghost"
+                        size="sm"
+                        onClick={handleCopy}
+                        className="gap-2 text-xs"
+                      >
+                        <Copy className="h-3.5 w-3.5" />
+                        Copy
+                      </UIButton>
+                      <UIButton
+                        variant="ghost"
+                        size="sm"
+                        onClick={handleDownload}
+                        className="gap-2 text-xs"
+                      >
+                        <Download className="h-3.5 w-3.5" />
+                        Download
+                      </UIButton>
+                      <UIButton
+                        variant="ghost"
+                        size="sm"
+                        onClick={handleReset}
+                        className="gap-2 text-xs"
+                      >
+                        <RotateCcw className="h-3.5 w-3.5" />
+                        Reset
+                      </UIButton>
+                      <Separator orientation="vertical" className="h-4" />
+                    </>
+                  )}
+                </div>
+                <UIButton
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleFullscreen}
+                  className="gap-2 text-xs"
+                >
+                  {isFullscreen ? (
+                    <>
+                      <Minimize2 className="h-3.5 w-3.5" />
+                      Exit Fullscreen
+                    </>
+                  ) : (
+                    <>
+                      <Maximize2 className="h-3.5 w-3.5" />
+                      Fullscreen
+                    </>
+                  )}
+                </UIButton>
+              </div>
+              <div className="flex items-center border-b p-1 bg-background">
+                <ToolbarButton icon={Type} label="Paragraph" onClick={handleParagraphClick} />
+                <ToolbarButton icon={Heading2} label="Heading 2" onClick={handleHeading2Click} />
+                <ToolbarButton icon={Heading3} label="Heading 3" onClick={handleHeading3Click} />
+                <ToolbarButton icon={List} label="Bullet List" onClick={handleBulletListClick} />
+                <ToolbarButton icon={ListOrdered} label="Numbered List" onClick={handleNumberedListClick} />
+                <ToolbarSeparator />
+                <ToolbarButton icon={Code} label="Code Block" onClick={handleCodeBlockClick} />
+                <ToolbarButton icon={Quote} label="Blockquote" onClick={handleBlockquoteClick} />
+                <ToolbarButton icon={ImageIcon} label="Image" onClick={handleImageClick} />
+                <ToolbarButton icon={LinkIcon} label="Link" onClick={handleLinkClick} />
+                <ToolbarButton icon={Table} label="Table" onClick={handleTableClick} />
+                <ToolbarSeparator />
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <UIButton
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 px-2 flex items-center gap-1 font-normal"
+                    >
+                      <Notebook className="h-4 w-4 text-muted-foreground" />
+                      <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                    </UIButton>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start">
+                    <DropdownMenuItem onClick={() => handleNoteClick('note')}>
+                      Note
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleNoteClick('danger')}>
+                      Danger
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleNoteClick('warning')}>
+                      Warning
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleNoteClick('success')}>
+                      Success
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <ToolbarSeparator />
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <UIButton
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 px-2 flex items-center gap-1 font-normal"
+                    >
+                      <Component className="h-4 w-4 text-muted-foreground" />
+                      <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                    </UIButton>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start">
+                    <DropdownMenuItem onClick={() => handleComponentClick('stepper')}>
+                      <Rows className="h-4 w-4 mr-2" />
+                      Stepper
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleComponentClick('card')}>
+                      <LayoutGrid className="h-4 w-4 mr-2" />
+                      Card
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleComponentClick('button')}>
+                      <MousePointer2 className="h-4 w-4 mr-2" />
+                      Button
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleComponentClick('accordion')}>
+                      <ChevronDown className="h-4 w-4 mr-2" />
+                      Accordion
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleComponentClick('tabs')}>
+                      <LayoutPanelTop className="h-4 w-4 mr-2" />
+                      Tabs
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleComponentClick('youtube')}>
+                      <YoutubeIcon className="h-4 w-4 mr-2" />
+                      Youtube
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleComponentClick('tooltip')}>
+                      <HelpCircle className="h-4 w-4 mr-2" />
+                      Tooltip
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
             </div>
-          </div>
-          <ScrollArea className="flex-1 border rounded-lg pb-4">
-            <textarea
-              value={markdown}
-              onChange={(e) => setMarkdown(e.target.value)}
-              className="w-full h-full min-h-[600px] p-4 bg-background resize-none focus:outline-none font-mono text-sm leading-relaxed"
-              spellCheck={false}
-            />
+            <div className="editor-container">
+              <div className="editor-line-numbers" ref={lineNumbersRef}>
+                <div className="editor-line-numbers-content">
+                  {Array.from({ length: lineCount }).map((_, i) => (
+                    <div key={i} data-line-number={i + 1} />
+                  ))}
+                </div>
+              </div>
+              <textarea
+                ref={editorRef}
+                value={markdown}
+                onChange={(e) => setMarkdown(e.target.value)}
+                className="editor-textarea"
+                spellCheck={false}
+                placeholder="Start writing markdown..."
+              />
+            </div>
           </ScrollArea>
         </div>
       </div>
