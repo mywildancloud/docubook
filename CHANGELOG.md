@@ -2,7 +2,7 @@
 
 > Appears more modern editor for Docu Play
 
-![version 1.3.6 - Playground](https://docubook.pro/images/v-1.3.6.png)
+![version 1.3.6 - Playground](https://docubook.pro/images/new-editor.png)
 
 ### Added
 
