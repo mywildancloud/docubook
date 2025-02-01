@@ -47,7 +47,7 @@ export function FooterButtons() {
             rel="noopener noreferrer"
             className={buttonVariants({ variant: "outline", size: "sm" })}
           >
-            <Icon className="h-4 w-4 mr-2 text-primary" />
+            <Icon className="h-4 w-4 mr-2 dark:text-primary dark:hover:text-accent-foreground" />
             {button.text}
           </Link>
         );
