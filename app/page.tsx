@@ -84,7 +84,7 @@ export default function Home() {
             <CardTitle className="text-xl">Docu Play</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>it's easy to write interactive markdown content with a playground.</p>
+            <p>Easy to write interactive markdown content with a playground.</p>
           </CardContent>
         </Card>
       </div>
