@@ -5,15 +5,15 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { getMetadata } from "@/app/layout";
+import { NpxTerminal } from "@/components/terminal";
 
 export const metadata = getMetadata({
   title: "Home",
-  // description: "Discover the latest updates, tutorials, and insights on DocuBook.",
 });
 
 export default function Home() {
   return (
-    <div className="flex sm:min-h-[92vh] min-h-[85vh] flex-col items-center justify-center text-center px-2 py-8">
+    <div className="flex flex-col items-center justify-center text-center px-2 sm:py-40 py-8">
       <Link
         href="/changelog"
         className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
@@ -32,11 +32,10 @@ export default function Home() {
         </div>
       </Link>
       <h1 className="text-2xl font-bold mb-4 sm:text-6xl">
-        Unify Your Project Knowledge Seamlessly with modern Documentation
+        Create interactive nested documentations using MDX
       </h1>
       <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
-        a Documentation website built with Next.js, TypeScript, and Tailwind CSS. It features fast load times, SEO optimization, intuitive navigation, search functionality,
-         and markdown-based content management, making it ideal for organized, easily updated documentation.
+        An open-source Software Mintlify / Gitbook / Read the Docs / Docusaurus alternative. Free forever with no feature limitations.
       </p>
       <div className="flex flex-row items-center gap-5">
         <Link
@@ -61,10 +60,11 @@ export default function Home() {
           Read Blog
         </Link>
       </div>
-      <span className="flex flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-7 -mb-12 max-[800px]:mb-12 font-code text-base font-medium">
+      <div className="flex flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-7 mb-12 font-code text-base font-medium">
         <TerminalSquareIcon className="w-5 h-5 mr-1 mt-0.5" />
         {"npx create_docu"}
-      </span>
+      </div>
+      <NpxTerminal/>
     </div>
   );
 }
