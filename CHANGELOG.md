@@ -1,3 +1,18 @@
+## [1.3.8] - 2025-02-08
+
+> Responsive Table of Content
+
+### Added
+
+- Components terminal MagicUI
+- Components card Shadncn
+- New mob-toc for a better experience on mobile devices
+
+### Improved
+
+- lib/markdown for generated dynamic toc on markdown
+- Responsive Table of Content below @media 1024px
+
 ## [1.3.6] - 2025-02-01
 
 > Appears more modern editor for Docu Play

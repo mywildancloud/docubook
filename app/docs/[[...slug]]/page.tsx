@@ -1,12 +1,13 @@
 import { notFound } from "next/navigation";
-import { getDocsForSlug } from "@/lib/markdown";
+import { getDocsForSlug, getDocsTocs } from "@/lib/markdown";
 import DocsBreadcrumb from "@/components/docs-breadcrumb";
 import Pagination from "@/components/pagination";
 import Toc from "@/components/toc";
 import { Typography } from "@/components/typography";
 import EditThisPage from "@/components/edit-on-github";
 import { formatDate2 } from "@/lib/utils";
-import docuConfig from "@/docu.json"; // Base URL dari konfigurasi JSON
+import docuConfig from "@/docu.json";
+import MobToc from "@/components/mob-toc";
 
 const { meta } = docuConfig;
 
@@ -16,7 +17,7 @@ type PageProps = {
   };
 };
 
-// Fungsi untuk meng-generate metadata secara dinamis
+// Function to generate metadata dynamically
 export async function generateMetadata({ params: { slug = [] } }: PageProps) {
   const pathName = slug.join("/");
   const res = await getDocsForSlug(pathName);
@@ -30,7 +31,7 @@ export async function generateMetadata({ params: { slug = [] } }: PageProps) {
 
   const { title, description, image } = res.frontmatter;
 
-  // URL absolut untuk og:image
+  // Absolute URL for og:image
   const ogImage = image
     ? `${meta.baseURL}/images/${image}`
     : `${meta.baseURL}/images/og-image.png`;
@@ -69,13 +70,18 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
 
   const { title, description, image, date } = res.frontmatter;
 
-  // Path file untuk link edit
+  // File path for edit link
   const filePath = `contents/docs/${slug.join("/") || ""}/index.mdx`;
+
+  const tocs = await getDocsTocs(pathName);
 
   return (
     <div className="flex items-start gap-10">
       <div className="flex-[4.5] pt-10">
         <DocsBreadcrumb paths={slug} />
+        <div className="mb-8">
+          <MobToc tocs={tocs} />
+        </div>
         <Typography>
           <h1 className="text-3xl !-mt-0.5">{title}</h1>
           <p className="-mt-4 text-muted-foreground text-[16.5px]">{description}</p>
