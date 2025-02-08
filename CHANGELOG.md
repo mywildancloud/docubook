@@ -5,13 +5,14 @@
 ### Added
 
 - Components terminal MagicUI
-- Components card Shadncn
+- Components card Shadcn
 - New mob-toc for a better experience on mobile devices
 
 ### Improved
 
 - lib/markdown for generated dynamic toc on markdown
 - Responsive Table of Content below @media 1024px
+- Improve docs page
 
 ## [1.3.6] - 2025-02-01
 
