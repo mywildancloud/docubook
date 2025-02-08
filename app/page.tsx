@@ -49,7 +49,7 @@ export default function Home() {
           Get Started
         </Link>
         <Link
-          href="/blog"
+          href="/playground"
           className={buttonVariants({
             variant: "secondary",
             className:
@@ -57,7 +57,7 @@ export default function Home() {
             size: "lg",
           })}
         >
-          Read Blog
+          Playground
         </Link>
       </div>
       <div className="flex flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-7 mb-12 font-code text-base font-medium">
