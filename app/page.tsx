@@ -1,11 +1,11 @@
 import { buttonVariants } from "@/components/ui/button";
 import { page_routes } from "@/lib/routes-config";
-import { TerminalSquareIcon, ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, FileJson, GitCommitHorizontal, SquarePlay } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { getMetadata } from "@/app/layout";
-import { NpxTerminal } from "@/components/terminal";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata = getMetadata({
   title: "Home",
@@ -13,7 +13,7 @@ export const metadata = getMetadata({
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center text-center px-2 sm:py-40 py-8">
+    <div className="flex flex-col min-h:[100vh] items-center justify-center text-center px-4 sm:py-40 py-12">
       <Link
         href="/changelog"
         className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
@@ -25,24 +25,24 @@ export default function Home() {
             )}
           >
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-100 hover:duration-300 hover:dark:text-neutral-200">
-              <span>🚀 Introducing DocuBook v.1.3.6</span>
+              <span>🚀 New Version - Release v.1.3.6</span>
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </div>
         </div>
       </Link>
-      <h1 className="text-2xl font-bold mb-4 sm:text-6xl">
-        Create interactive nested documentations using MDX
-      </h1>
-      <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
-        An open-source Software Mintlify / Gitbook / Read the Docs / Docusaurus alternative. Free forever with no feature limitations.
+      <h1 className="text-2xl font-bold mb-6 sm:text-6xl">DocuBook Starter Templates</h1>
+      <p className="mb-10 sm:text-xl max-w-[800px] text-muted-foreground">
+        Get started by editing app/page.tsx . Save and see your changes instantly.{' '}
+        <Link className="text-primary underline" href="https://www.docubook.pro/docs/getting-started/introduction" target="_blank">
+          Read Documentations
+        </Link>
       </p>
-      <div className="flex flex-row items-center gap-5">
+      <div className="flex flex-row items-center gap-6 mb-10">
         <Link
           href={`/docs${page_routes[0].href}`}
           className={buttonVariants({
-            className:
-              "px-6 bg-accent text-white hover:bg-primary dark:bg-accent dark:hover:bg-primary",
+            className: "px-6 bg-accent text-white hover:bg-primary dark:bg-accent dark:hover:bg-primary",
             size: "lg",
           })}
         >
@@ -52,19 +52,42 @@ export default function Home() {
           href="/playground"
           className={buttonVariants({
             variant: "secondary",
-            className:
-              "px-6 bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700",
+            className: "px-6 bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700",
             size: "lg",
           })}
         >
           Playground
         </Link>
       </div>
-      <div className="flex flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-7 mb-12 font-code text-base font-medium">
-        <TerminalSquareIcon className="w-5 h-5 mr-1 mt-0.5" />
-        {"npx create_docu"}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
+        <Card className="px-2 py-6">
+          <CardHeader className="flex flex-row justify-center items-center gap-3">
+            <FileJson className="size-6 text-primary" />
+            <CardTitle className="text-xl">docu.json</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>Edit the docu.json file to change the content in the header, footer and sidebar.</p>
+          </CardContent>
+        </Card>
+        <Card className="px-2 py-6">
+          <CardHeader className="flex flex-row justify-center items-center gap-3">
+            <GitCommitHorizontal className="size-6 text-primary" />
+            <CardTitle className="text-xl">CHANGELOG.md</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>Manage changes to each version of your application in the CHANGELOG.md file.</p>
+          </CardContent>
+        </Card>
+        <Card className="px-2 py-6">
+          <CardHeader className="flex flex-row justify-center items-center gap-3">
+            <SquarePlay className="size-6 text-primary" />
+            <CardTitle className="text-xl">Docu Play</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>it's easy to write interactive markdown content with a playground.</p>
+          </CardContent>
+        </Card>
       </div>
-      <NpxTerminal/>
     </div>
   );
 }
