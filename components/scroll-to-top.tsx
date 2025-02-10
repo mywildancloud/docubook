@@ -40,7 +40,7 @@ export function ScrollToTop() {
         <Button
           variant="outline"
           size="sm"
-          className="gap-2 rounded-full shadow-md bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-background"
+          className="gap-2 rounded-full shadow-md bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-background hover:text-primary"
           onClick={scrollToTop}
         >
           <ArrowUpIcon className="h-4 w-4" />
