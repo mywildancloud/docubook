@@ -7,6 +7,9 @@
 - Components terminal MagicUI
 - Components card Shadcn
 - New mob-toc for a better experience on mobile devices
+- New Components scroll to top button
+- Scroll to top :blog-post
+- Scroll to top :docs-post
 
 ### Improved
 

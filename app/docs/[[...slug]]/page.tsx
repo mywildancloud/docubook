@@ -8,6 +8,7 @@ import EditThisPage from "@/components/edit-on-github";
 import { formatDate2 } from "@/lib/utils";
 import docuConfig from "@/docu.json";
 import MobToc from "@/components/mob-toc";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 const { meta } = docuConfig;
 
@@ -96,6 +97,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
           </div>
           <Pagination pathname={pathName} />
         </Typography>
+        <ScrollToTop />
       </div>
       <Toc path={pathName} />
     </div>
