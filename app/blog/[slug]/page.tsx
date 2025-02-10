@@ -6,6 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { formatDate } from "@/lib/utils";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 type PageProps = {
   params: { slug: string };
@@ -56,6 +57,7 @@ export default async function BlogPage({ params: { slug } }: PageProps) {
       <div className="!w-full">
         <Typography>{res.content}</Typography>
       </div>
+        <ScrollToTop />
     </div>
   );
 }
