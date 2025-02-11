@@ -4,6 +4,7 @@ import { VersionEntry } from "@/components/changelog/version-entry";
 import { VersionToc } from "@/components/changelog/version-toc";
 import { getMetadata } from "@/app/layout";
 import docuConfig from "@/docu.json";
+import { FloatingVersionToc } from "@/components/changelog/floating-version";
 
 export const metadata = getMetadata({
   title: "Changelog",
@@ -36,19 +37,27 @@ export default async function ChangelogPage() {
           <main className="flex-1 lg:flex-[5.25] min-w-0">
             <div className="relative">
               <div className="absolute left-0 top-0 h-full w-px bg-border lg:block hidden" />
-              <div className="lg:pl-12 pl-0 pt-8">
+              <div className="lg:pl-12 pl-0 lg:pt-8">
                 {entries.map((entry, index) => (
-                  <VersionEntry
-                    key={entry.version}
-                    {...entry}
-                    isLast={index === entries.length - 1}
-                  />
+                    <section
+                        id={`version-${entry.version}`}
+                        key={entry.version}
+                        className="scroll-mt-20" // Tambahkan margin atas saat scroll
+                     >
+                        <VersionEntry {...entry} isLast={index === entries.length - 1} />
+                    </section>
                 ))}
               </div>
             </div>
           </main>
         </div>
       </div>
+          {/* Floating TOC for smaller screens */}
+            {entries.length > 0 && (
+            <FloatingVersionToc
+                versions={entries.map(({ version, date }) => ({ version, date }))}
+            />
+            )}
     </div>
   );
 }

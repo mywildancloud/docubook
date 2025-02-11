@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cn, formatDate2 } from "@/lib/utils";
-import { ListIcon } from "lucide-react";
+import { History } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface VersionTocProps {
@@ -34,7 +34,7 @@ export function VersionToc({ versions }: VersionTocProps) {
           }
         });
       },
-      { 
+      {
         threshold: 0.2,
         rootMargin: '-20% 0px -60% 0px'
       }
@@ -53,7 +53,7 @@ export function VersionToc({ versions }: VersionTocProps) {
     <aside className="lg:flex hidden toc flex-[1.5] min-w-[238px] pt-8 sticky top-16 h-[calc(100vh-4rem)]">
       <div className="flex flex-col gap-2 w-full">
         <div className="flex items-center gap-2 mb-2">
-          <ListIcon className="w-4 h-4" />
+          <History className="w-4 h-4" />
           <h3 className="font-medium text-sm">Version History</h3>
         </div>
         <ScrollArea className="h-full">
@@ -63,7 +63,7 @@ export function VersionToc({ versions }: VersionTocProps) {
                 key={version}
                 href={`#v${version}`}
                 className={cn(
-                  "hover:text-primary transition-colors py-1",
+                  "hover:text-foreground transition-colors py-1",
                   activeId === `v${version}` && "font-medium text-primary"
                 )}
                 onClick={(e) => {

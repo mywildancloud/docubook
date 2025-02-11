@@ -1,3 +1,20 @@
+## [1.4.0] - 2025-02-11
+
+> Floating Button Version with Dynamic Tag {version} on Changelog page
+
+### Added
+
+- New components / changelog floating-version.tsx
+- Button popover to open version-toc below @media 1024px
+- Dynamic tag by section ID #version
+- Dynamic url tag #version
+
+### Improved
+
+- change icon version history
+- responsive version-toc
+- improvement components to changelog page
+
 ## [1.3.8] - 2025-02-08
 
 > Responsive Table of Content
