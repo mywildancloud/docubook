@@ -109,3 +109,7 @@ li#changelog {
   padding-left: 1.5em;
   text-indent: -1.2rem;
 }
+
+[id^="version-"] {
+    scroll-margin-top: 4rem; /* sesuaikan dengan tinggi navbar */
+}
