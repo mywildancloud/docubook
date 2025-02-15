@@ -8,7 +8,7 @@
 - Button popover to open version-toc below @media 1024px
 - Dynamic tag by section ID #version
 - Dynamic url tag #version
-- Dynamic version indikator on floating version when scrolling section by ID
+- Dynamic version indicator on floating version when scrolling section by ID
 
 ### Improved
 
