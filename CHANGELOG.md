@@ -8,6 +8,7 @@
 - Button popover to open version-toc below @media 1024px
 - Dynamic tag by section ID #version
 - Dynamic url tag #version
+- Dynamic version indikator on floating version when scrolling section by ID
 
 ### Improved
 
@@ -86,8 +87,6 @@
 ## [1.3.0] - 2024-12-31
 
 > Release Note Feature to Make it Easier to Write Changelogs
-
-![version 1.3.0 - release note image](https://docubook.pro/images/release-note.png)
 
 ### Added
 

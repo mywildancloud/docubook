@@ -27,8 +27,8 @@ export function FloatingVersionToc({ versions }: FloatingVersionTocProps) {
 
     const observer = new IntersectionObserver(handleIntersection, {
       root: null,
-      rootMargin: "-50% 0px -50% 0px",
-      threshold: 0.1,
+      rootMargin: "-64px 0px -50% 0px",
+      threshold: 0.25,
     });
 
     versions.forEach(({ version }) => {
