@@ -9,12 +9,14 @@
 - Dynamic tag by section ID #version
 - Dynamic url tag #version
 - Dynamic version indicator on floating version when scrolling section by ID
+- New icon on note components
 
 ### Improved
 
 - change icon version history
 - responsive version-toc
 - improvement components to changelog page
+- styling note components on markdown
 
 ## [1.3.8] - 2025-02-08
 
