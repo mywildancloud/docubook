@@ -17,7 +17,7 @@
 ## Installation
 
 ```bash
-npx create_docu
+npx @docubook/create@latest
 ```
 
 #### command output
@@ -41,26 +41,30 @@ Next steps:
 ### How to Update DocuBook?
 - **Open a New Terminal**: Please open a new terminal on the desktop that has DocuBook installed.
 - **Move Directory**: for example, if the directory name is docubook, then write `cd docubook` and press enter.
-- **npx update_docu**: run `npx update_docu` bash script.
 
 ```bash
-npx update_docu@latest
+npx @docubook/update@latest
 ```
 
 #### command output
 
 ```bash
-Updating Docubook project in /path/your/docubook...
-ℹ Skipped public
-ℹ Skipped styles
-ℹ Skipped contents
-ℹ Skipped app/page.tsx
-ℹ Skipped app/hire-me
-✔ Docubook project successfully updated in /path/your/docubook!
+📂 Updating Docubook project in /Users/wildan/Public/docubook...
 
-Next steps:
+ℹ ⚡ Skipped public
+ℹ ⚡ Skipped contents
+ℹ ⚡ Skipped app/page.tsx
+ℹ ⚡ Skipped docu.json
+ℹ ⚡ Skipped CHANGELOG.md
+✨ Replacing styles folder...
+✨ Replaced all CSS files in styles folder
+✔ ✅ Docubook v1.4.2 successfully updated in /Users/wildan/Public/docubook!
+
+🎯 Next steps:
 1. Verify your changes in the current directory.
-2. Run the development server:
+2. Run the install script to check for package updates:
+   npm install
+3. Run the development server:
    npm run dev
 ```
 
