@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography } from "@/components/typography";
 import { useState, useEffect, useRef } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
@@ -305,11 +304,12 @@ export default function PlaygroundPage() {
   size="md"
   variation="primary"
 />\n`,
-      accordion: `<Accordion
-  title="Click to expand"
-  content="Your content here"
-  defaultOpen={false}
-/>\n`,
+      accordion: `<Accordion title="Markdown">
+    this is an example of plain text content from the accordion component and below is markdown ;
+    1. number one
+    2. number two
+    3. number three
+</Accordion>\n`,
       youtube: `<Youtube videoId="your-video-id" />\n`,
       tooltip: `<Tooltip tip="Your tooltip text">
   <span>Hover over me</span>

@@ -8,15 +8,21 @@
 - Compatibility for markdown in accordion
 - Nested components inside an accordion
 - New icon on note components
+- add CLI npx @docubook/create@latest
+- add CLI npx @docubook/update@latest
 
 ### Improved
 
 - Better UI design for accordion
-- styling note components on markdown
+- Styling Note components on markdown
+- Change accordion output on playground
+- Change accordion output on snippet
 
 ### Removed
 
-- remove depcreated props on accordion
+- Remove depcreated props on accordion
+- Remove CLI npx update_docu
+- Remove CLI npx create_docu
 
 ## [1.4.0] - 2025-02-11
 
