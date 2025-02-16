@@ -1,3 +1,60 @@
+## [1.4.2] - 2025-02-16
+
+> Complex Content for Accordion Component props {children}
+
+### Added
+
+- New Props with {children} in accordion
+- Compatibility for markdown in accordion
+- Nested components inside an accordion
+- New icon on note components
+
+### Improved
+
+- Better UI design for accordion
+- styling note components on markdown
+
+### Removed
+
+- remove depcreated props on accordion
+
+## [1.4.0] - 2025-02-11
+
+> Floating Button Version with Dynamic Tag {version} on Changelog page
+
+### Added
+
+- New components / changelog floating-version.tsx
+- Button popover to open version-toc below @media 1024px
+- Dynamic tag by section ID #version
+- Dynamic url tag #version
+- Dynamic version indicator on floating version when scrolling section by ID
+
+### Improved
+
+- change icon version history
+- responsive version-toc
+- improvement components to changelog page
+
+## [1.3.8] - 2025-02-08
+
+> Responsive Table of Content
+
+### Added
+
+- Components terminal MagicUI
+- Components card Shadcn
+- New mob-toc for a better experience on mobile devices
+- New Components scroll to top button
+- Scroll to top :blog-post
+- Scroll to top :docs-post
+
+### Improved
+
+- lib/markdown for generated dynamic toc on markdown
+- Responsive Table of Content below @media 1024px
+- Improve docs page
+
 ## [1.3.6] - 2025-02-01
 
 > Appears more modern editor for Docu Play
@@ -50,8 +107,6 @@
 ## [1.3.0] - 2024-12-31
 
 > Release Note Feature to Make it Easier to Write Changelogs
-
-![version 1.3.0 - release note image](https://docubook.pro/images/release-note.png)
 
 ### Added
 
