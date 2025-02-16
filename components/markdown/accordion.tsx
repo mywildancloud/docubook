@@ -24,15 +24,15 @@ const Accordion = ({
             <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center justify-between w-full px-4 h-14 pb-2 transition-colors bg-background dark:hover:bg-muted/50 hover:bg-muted/15"
+                className="flex items-center my-auto space-x-2 space-y-2 w-full px-4 h-12 transition-colors bg-background dark:hover:bg-muted/50 hover:bg-muted/15"
             >
-                <h3 className="font-medium text-base text-foreground">{title}</h3>
                 <ChevronRight
                     className={cn(
                         "w-4 h-4 text-muted-foreground transition-transform duration-200",
                         isOpen && "rotate-90"
                     )}
                 />
+                <h3 className="font-medium text-base text-foreground pb-2">{title}</h3>
             </button>
 
             {isOpen && (
