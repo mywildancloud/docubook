@@ -8,72 +8,65 @@ I have implemented the `accordion` component into markdown which is ready to use
 
 ## Preview
 
-### HTML
+### Code Block
 
-<Accordion
-  title="Feature List"
-  content={
-    <div className="space-y-2">
-      <h4 className="font-medium">Key Features:</h4>
-      <ul className="list-disc list-inside">
-        <li>Customizable icons</li>
-        <li>Optional description text</li>
-        <li>Support for complex content</li>
-        <li>Smooth animations</li>
-      </ul>
-    </div>
-  }
-  defaultOpen={true}
-/>
+<Accordion title="Code Block" defaultOpen={true}>
+    ```javascript:main.js showLineNumbers {3-4}
+    function isRocketAboutToCrash() {
+        // Check if the rocket is stable
+        if (!isStable()) {
+            NoCrash(); // Prevent the crash
+        }
+    }
+    ```
+</Accordion>
 
-### Plain Text
+### Text with Markdown
 
-<Accordion
-  title="Plain Text"
-  content="fill in the content in the form of plain text in the Accordion props"
-  defaultOpen={false}
-/>
+<Accordion title="Markdown">
+    this is an example of plain text content from the accordion component and below is markdown ;
+    1. number one
+    2. number two
+    3. number three
+</Accordion>
 
 ## Props
 
 | Prop          | Type      | Default        | Description                                                                            |
 | ------------- | --------- | -------------- | -------------------------------------------------------------------------------------- |
 | `title`       | `string`  | `null`         | The value of Accordion title.                                                          |
-| `content`     | `string`  | `null`         | Flexible content, both HTML elements and plain text.                                   |
+| `children`     | `ReactNode`  | `null`         | Flexible content, both HTML elements, markdown componenst and plain text.                                   |
 | `defaultOpen` | `boolean` | `false`        | You can change the value to `true` if you want the content to open when the page loads |
 
 ## Code
 
-<Tabs defaultValue="plaintext" className="pt-5 pb-1">
+<Tabs defaultValue="markdown" className="pt-5 pb-1">
   <TabsList>
-    <TabsTrigger value="plaintext">Plain Text</TabsTrigger>
-    <TabsTrigger value="html">Html</TabsTrigger>
+    <TabsTrigger value="markdown">Markdown</TabsTrigger>
+    <TabsTrigger value="codeblock">Code Block</TabsTrigger>
   </TabsList>
-  <TabsContent value="plaintext">
+  <TabsContent value="markdown">
     ```plaintext
-    <Accordion
-      title="Plain Text"
-      content="fill in the content in the form of plain text in the Accordion props"
-    />
+    <Accordion title="Markdown">
+        this is an example of plain text content from the accordion component and below is markdown ;
+        1. number one
+        2. number two
+        3. number three
+    </Accordion>
     ```
   </TabsContent>
-  <TabsContent value="html">
-    ```html
-    <Accordion
-      title="Feature List"
-      content={
-        <div className="space-y-2">
-          <h4 className="font-medium">Key Features:</h4>
-          <ul className="list-disc list-inside">
-            <li>Customizable icons</li>
-            <li>Optional description text</li>
-            <li>Support for complex content</li>
-            <li>Smooth animations</li>
-          </ul>
-        </div>
-      }
-      defaultOpen={true}
-    />
-    ```
+  <TabsContent value="codeblock">
+    ````plaintext
+    <Accordion title="Code Block" defaultOpen={true}>
+        ```javascript:main.js showLineNumbers {3-4}
+        function isRocketAboutToCrash() {
+            // Check if the rocket is stable
+            if (!isStable()) {
+                NoCrash(); // Prevent the crash
+            }
+        }
+        ```
+    </Accordion>
+    ````
   </TabsContent>
 </Tabs>
