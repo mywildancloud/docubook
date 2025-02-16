@@ -1,3 +1,23 @@
+## [1.4.2] - 2025-02-16
+
+> Complex Content for Accordion Component props {children}
+
+### Added
+
+- New Props with {children} in accordion
+- Compatibility for markdown in accordion
+- Nested components inside an accordion
+- New icon on note components
+
+### Improved
+
+- Better UI design for accordion
+- styling note components on markdown
+
+### Removed
+
+- remove depcreated props on accordion
+
 ## [1.4.0] - 2025-02-11
 
 > Floating Button Version with Dynamic Tag {version} on Changelog page
@@ -9,14 +29,12 @@
 - Dynamic tag by section ID #version
 - Dynamic url tag #version
 - Dynamic version indicator on floating version when scrolling section by ID
-- New icon on note components
 
 ### Improved
 
 - change icon version history
 - responsive version-toc
 - improvement components to changelog page
-- styling note components on markdown
 
 ## [1.3.8] - 2025-02-08
 
