@@ -44,7 +44,7 @@ Next steps:
 - **npx update_docu**: run `npx update_docu` bash script.
 
 ```bash
-npx update_docu
+npx update_docu@latest
 ```
 
 #### command output
