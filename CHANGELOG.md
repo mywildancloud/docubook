@@ -182,7 +182,7 @@
 
 ## [1.1.0] - 2024-12-15
 
-> Major Update : Easily manage set up with docu.json
+> Minor Update : Easily manage set up with docu.json
 
 ### Added
 
