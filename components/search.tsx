@@ -1,11 +1,12 @@
 "use client";
 
-import { CommandIcon, FileIcon, SearchIcon } from "lucide-react";
+import { ArrowUpIcon, ArrowDownIcon, CommandIcon, FileIcon, SearchIcon, CornerDownLeftIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
+  DialogFooter,
   DialogTrigger,
   DialogClose,
   DialogTitle,
@@ -26,7 +27,7 @@ export default function Search() {
         setIsOpen(true);
       }
     };
-    
+
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
@@ -110,6 +111,25 @@ export default function Search() {
               })}
             </div>
           </ScrollArea>
+          <DialogFooter className="md:flex md:justify-start hidden h-14 px-6 bg-transparent border-t text-[14px] outline-none">
+              <div className="flex items-center gap-2">
+                <span className="dark:bg-accent/15 bg-slate-200 border rounded p-2">
+                  <ArrowUpIcon className="w-3 h-3"/>
+                </span>
+                <span className="dark:bg-accent/15 bg-slate-200 border rounded p-2">
+                  <ArrowDownIcon className="w-3 h-3"/>
+                </span>
+                <p className="text-muted-foreground">to navigate</p>
+                <span className="dark:bg-accent/15 bg-slate-200 border rounded p-2">
+                  <CornerDownLeftIcon className="w-3 h-3"/>
+                </span>
+                <p className="text-muted-foreground">to select</p>
+                <span className="dark:bg-accent/15 bg-slate-200 border rounded px-2 py-1">
+                  esc
+                </span>
+                <p className="text-muted-foreground">to close</p>
+              </div>
+          </DialogFooter>
         </DialogContent>
       </Dialog>
     </div>

@@ -1,3 +1,27 @@
+## [1.5.0] - 2025-02-18
+
+> Minor Update - improved features and responsiveness on all devices
+
+### Added
+
+- New dialog footer on searchbox above @media 768px
+- Icon X for close dialog on searcbox as esc on medium screen
+
+### Improved
+
+- Responsive Leftbar components on large screen
+- Menu Trigger on medium screen
+- Responsive Navbar components on medium screen
+- Better UX for searchbox dialog
+
+### Fixed
+
+- Responsive issue
+- Compatibility for Bun
+- Changes postcss.config.js to .cjs for Bun
+- all CLI installer and updater not working
+- adjustments for package managers npm, pnpm, bun, yarn
+
 ## [1.4.2] - 2025-02-16
 
 > Complex Content for Accordion Component props {children}

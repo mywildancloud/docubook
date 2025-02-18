@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
+import  { X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -44,11 +45,10 @@ const DialogContent = React.forwardRef<
     >
       {children}
       <DialogPrimitive.Close className="absolute right-3 top-3.5 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        {/* <X className="h-4 w-4" /> */}
-        <div className="rounded-sm text-xs border py-1 px-2 hover:bg-muted">
+        <div className="hidden md:flex rounded-sm text-xs border py-1 px-2 hover:bg-muted">
           Esc
         </div>
-        <span className="sr-only">Close</span>
+        <X className="h-5 w-5 hidden max-md:flex" />
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </DialogPortal>
