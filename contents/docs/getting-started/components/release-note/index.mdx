@@ -4,39 +4,51 @@ description: The Release Note component makes it easy for you to write updates f
 date: 31-12-2024
 ---
 
-## Example Content
+## Usage
 
 To fill in the Release Note content that will be displayed on the Changelog page, open the `CHANGELOG.md` file, write it with the markdown tag.
 
-```markdown:CHANGELOG.md showLineNumbers {1,3,5,7,9-16}
-# # [1.3.0] - 2024-12-31
+<Accordion title="Example" defaultOpen={true}>
+    ```plaintext:CHANGELOG.md
+    ## [1.3.0] - 2024-12-31
 
-> Release Note Feature to Make it Easier to Write Changelogs
+    > Release Note Feature to Make it Easier to Write Changelogs
 
-![Your Image Alt Text](https://docubook.pro/images/example-img.png)
+    ![Your Image Alt Text](https://docubook.pro/images/example-img.png)
 
-# # # Added
+    ### Added
 
-- New Release Note Feature
-- New Layout for Changelog page
-- New Changelog page
-- add Release Note Component
-- Easily write release notes directly from the CHANGELOG.md file
-- Toc for versioning
-- Write with the markdown tag
-- add lib / changelog.ts
-```
+    - New Release Note Feature
+    - New Layout for Changelog page
+    - New Changelog page
+    - add Release Note Component
+    - Easily write release notes directly from the CHANGELOG.md file
+    - Toc for versioning
+    - Write with the markdown tag
+    - add lib / changelog.ts
+    ```
+</Accordion>
 
-## Tag
+## Preview : Render Output
 
-- to Write Version and Date tags use `## [1.0.0] - 2024-12-31`
-- to Write Description use `> your description updates`
-- to Showing image use `![Your Image Alt Text](https://docubook.pro/images/example-img.png)`
-- to Write Changes Category use `### Added`
+<Accordion title="Show Render">
+    ## v1.3.0 - Jan 31, 2024
 
-<Note type="note" title="Note">
-  Under the ### tag, write an unordered list.
-</Note>
+    > Release Note Feature to Make it Easier to Write Changelogs
+
+    ![Your Image Alt Text](https://docubook.pro/images/example-img.png)
+
+    ### Added
+
+    - New Release Note Feature
+    - New Layout for Changelog page
+    - New Changelog page
+    - add Release Note Component
+    - Easily write release notes directly from the CHANGELOG.md file
+    - Toc for versioning
+    - Write with the markdown tag
+    - add lib / changelog.ts
+</Accordion>
 
 ## Changes Category
 

@@ -13,6 +13,7 @@
 - Menu Trigger on medium screen
 - Responsive Navbar components on medium screen
 - Better UX for searchbox dialog
+- tooltips components can be written together with regular paragraphs
 
 ### Fixed
 
