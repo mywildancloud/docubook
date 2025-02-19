@@ -1,3 +1,28 @@
+## [1.5.0] - 2025-02-18
+
+> Minor Update - improved features and responsiveness on all devices
+
+### Added
+
+- New dialog footer on searchbox above @media 768px
+- Icon X for close dialog on searcbox as esc on medium screen
+
+### Improved
+
+- Responsive Leftbar components on large screen
+- Menu Trigger on medium screen
+- Responsive Navbar components on medium screen
+- Better UX for searchbox dialog
+- tooltips components can be written together with regular paragraphs
+
+### Fixed
+
+- Responsive issue
+- Compatibility for Bun
+- Changes postcss.config.js to .cjs for Bun
+- all CLI installer and updater not working
+- adjustments for package managers npm, pnpm, bun, yarn
+
 ## [1.4.2] - 2025-02-16
 
 > Complex Content for Accordion Component props {children}
@@ -8,15 +33,21 @@
 - Compatibility for markdown in accordion
 - Nested components inside an accordion
 - New icon on note components
+- add CLI npx @docubook/create@latest
+- add CLI npx @docubook/update@latest
 
 ### Improved
 
 - Better UI design for accordion
-- styling note components on markdown
+- Styling Note components on markdown
+- Change accordion output on playground
+- Change accordion output on snippet
 
 ### Removed
 
-- remove depcreated props on accordion
+- Remove depcreated props on accordion
+- Remove CLI npx update_docu
+- Remove CLI npx create_docu
 
 ## [1.4.0] - 2025-02-11
 
@@ -152,7 +183,7 @@
 
 ## [1.1.0] - 2024-12-15
 
-> Major Update : Easily manage set up with docu.json
+> Minor Update : Easily manage set up with docu.json
 
 ### Added
 

@@ -311,9 +311,7 @@ export default function PlaygroundPage() {
     3. number three
 </Accordion>\n`,
       youtube: `<Youtube videoId="your-video-id" />\n`,
-      tooltip: `<Tooltip tip="Your tooltip text">
-  <span>Hover over me</span>
-</Tooltip>\n`,
+      tooltip: `What do you know about <Tooltip text="DocuBook" tip="npx @docubook/create@latest" /> ? Create interactive nested documentations using MDX.\n`,
       tabs: `<Tabs defaultValue="tab1" className="pt-5 pb-1">
   <TabsList>
     <TabsTrigger value="tab1">Tab 1</TabsTrigger>

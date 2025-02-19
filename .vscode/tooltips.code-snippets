@@ -2,14 +2,7 @@
     "DocuTooltips": {
       "prefix": "tooltips",
       "body": [
-        "<div className=\"w-full\">",
-        "   <Tooltip tip=\"${1:this is tooltips! DocuBook on version 1.0.5}\">",
-        "       <span style={{ textDecoration: \"underline dotted\", cursor: \"pointer\" }}>",
-        "           ${2:Hover over me}",
-        "       </span>",
-        "   </Tooltip>",
-        "   <span> ${3:and this is some regular text.}</span>",
-        "</div>"
+        "${1:What do you know about }<Tooltip text=\"${2:DocuBook}\" tip=\"${3:npx @docubook/create@latest}\" /> ${4:? Create interactive nested documentations using MDX.}",
       ],
       "description": "Create a DocuTooltips component with version examples."
     }
