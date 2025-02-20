@@ -2,24 +2,14 @@
     "DocuCards": {
       "prefix": "card",
       "body": [
-        "<div className=\"grid grid-cols-1 sm:grid-cols-2 gap-4\">",
-            "<Card>",
-            "    <Card.Title title=\"${1:Heading}\" icon=\"${2:Heading}\" />",
-            "       <Card.Description description=\"${3:Your description card here! change this text}\" />",
+        "<CardGroup cols={2}>",
+            "<Card title=\"${1:Heading2}\" icon=\"${2:Heading2}\">",
+            "   This is an example of card content with columns.",
             "</Card>",
-            "<Card>",
-            "    <Card.Title title=\"Link\" icon=\"Link\" />",
-            "       <Card.Description description=\"Your description card here! change this text\" />",
+            "<Card title=\"${3:Heading3}\" icon=\"${4:Heading3}\">",
+            "   This is an example of card content with columns.",
             "</Card>",
-            "<Card>",
-            "    <Card.Title title=\"Images\" icon=\"Images\" />",
-            "        <Card.Description description=\"Your description card here! change this text\" />",
-            "</Card>",
-            "<Card>",
-            "    <Card.Title title=\"Code Block\" icon=\"Code\" />",
-            "        <Card.Description description=\"Your description card here! change this text\" />",
-            "</Card>",
-        "</div>"
+        "</CardGroup>"
       ],
       "description": "Create a DocuCards component on markdown."
     }

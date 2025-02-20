@@ -1,57 +1,41 @@
 import React, { ReactNode } from "react";
 import * as Icons from "lucide-react";
+import Link from "next/link";
+import clsx from "clsx";
 
 type IconName = keyof typeof Icons;
 
-// Props untuk Card utama
 interface CardProps {
-  children: ReactNode;
-}
-
-// Props untuk CardTitle
-interface CardTitleProps {
   title: string;
-  icon?: IconName; // Properti ikon berupa nama ikon yang valid
+  icon?: IconName;
+  href?: string;
+  horizontal?: boolean;
+  children: ReactNode;
+  className?: string;
 }
 
-// Props untuk CardDescription
-interface CardDescriptionProps {
-  description: string;
-}
+const Card: React.FC<CardProps> = ({ title, icon, href, horizontal, children, className }) => {
+  const Icon = icon ? (Icons[icon] as React.FC<{ className?: string }>) : null;
 
-// Komponen Card Utama
-const Card: React.FC<CardProps> & {
-  Title: React.FC<CardTitleProps>;
-  Description: React.FC<CardDescriptionProps>;
-} = ({ children }) => {
-  return (
-    <div className="border rounded-lg shadow-md overflow-hidden py-4 px-8">
-      {children}
+  const content = (
+    <div
+      className={clsx(
+        "border rounded-lg shadow-sm p-4 transition-all duration-200 bg-white dark:bg-gray-900",
+        "hover:bg-gray-50 dark:hover:bg-gray-800",
+        "flex gap-2",
+        horizontal ? "flex-row items-center gap-1" : "flex-col space-y-1",
+        className
+      )}
+    >
+      {Icon && <Icon className="w-5 h-5 text-primary flex-shrink-0" />}
+      <div className="flex-1 min-w-0 my-auto h-full">
+        <span className="text-base font-semibold">{title}</span>
+        <div className="text-sm text-gray-600 dark:text-gray-400 -mt-3">{children}</div>
+      </div>
     </div>
   );
+
+  return href ? <Link className="no-underline block" href={href}>{content}</Link> : content;
 };
-
-// Komponen Card Title
-Card.Title = ({ title, icon }: CardTitleProps) => {
-  const Icon = icon ? (Icons[icon] as React.FC<{ className?: string }>) : null; // Tipe eksplisit sebagai React.FC
-
-  return (
-    <div className="flex flex-col space-y-1">
-      {Icon && <Icon className="text-xl text-primary" />} {/* Render ikon jika ada */}
-      <h2 className="text-xl font-bold">{title}</h2>
-    </div>
-  );
-};
-
-// Menambahkan displayName untuk Card.Title
-Card.Title.displayName = "CardTitle";
-
-// Komponen Card Description
-Card.Description = ({ description }: CardDescriptionProps) => (
-  <p className="text-muted-foreground text-[16.5px] mt-2">{description}</p>
-);
-
-// Menambahkan displayName untuk Card.Description
-Card.Description.displayName = "CardDescription";
 
 export default Card;
