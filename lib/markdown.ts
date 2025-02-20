@@ -23,6 +23,7 @@ import Tooltip from "@/components/markdown/tooltips";
 import Card from "@/components/markdown/card";
 import Button from "@/components/markdown/button";
 import Accordion from "@/components/markdown/accordion";
+import CardGroup from "@/components/markdown/cardgroup";
 
 // add custom components
 const components = {
@@ -42,6 +43,7 @@ const components = {
   Card,
   Button,
   Accordion,
+  CardGroup,
 };
 
 // can be used for other pages like blogs, Guides etc

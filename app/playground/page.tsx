@@ -287,16 +287,10 @@ export default function PlaygroundPage() {
     Content for step 2
   </StepperItem>
 </Stepper>\n`,
-      card: `<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-  <Card>
-    <Card.Title title="Heading" icon="Heading" />
-    <Card.Description description="Your description card here! change this text" />
-  </Card>
-  <Card>
-    <Card.Title title="Link" icon="Link" />
-    <Card.Description description="Your description card here! change this text" />
-  </Card>
-</div>\n`,
+      card: `<Card title="Click on me" icon="Link" href="/docs/getting-started/components/button">
+    This is how you use a card with an icon and a link. Clicking on this card
+    brings you to the Card Group page.
+</Card>\n`,
       button: `<Button
   text="Click Me"
   href="#"

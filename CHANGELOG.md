@@ -1,3 +1,23 @@
+## [1.6.0] - 2025-02-21
+
+> New Feature Card Groups with arrays for more Flexible Content
+
+### Added
+
+- Card Groups Components
+- Props : href to url link
+- Props : horizontal boolean
+
+### Improved
+
+- Card props styling
+- Compability for Cards components
+- {children} support for card content
+
+### Removed
+
+- remove unused props cards components
+
 ## [1.5.0] - 2025-02-18
 
 > Minor Update - improved features and responsiveness on all devices
